@@ -27,8 +27,8 @@ gulp.task('sasscompile', function () {
     .pipe(
       sass({
         includePaths: [
-          CHASSIS.SASS,
           CHASSIS.DETAILER,
+          CHASSIS.SASS,
           SHOWROOM
         ]
       })

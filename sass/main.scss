@@ -1,15 +1,14 @@
-// @import 'detailer-config';
-// @import 'plugins/detailer/plugin';
 
+// @import 'detailer-config';
 @import 'detailer';
 @import 'chassis';
 
 // Import Detailer UI Components
 @import 'detailer/ui-components/buttons';
-// @import 'plugins/detailer/ui-components/forms';
-// @import 'plugins/detailer/ui-components/modal';
-// @import 'plugins/detailer/ui-components/overlay';
-// @import 'plugins/detailer/ui-components/tiles';
+@import 'detailer/ui-components/forms';
+@import 'detailer/ui-components/modal';
+@import 'detailer/ui-components/overlay';
+@import 'detailer/ui-components/tiles';
 
 .showroom {
   // Account for sticky footer
@@ -164,23 +163,23 @@
 
         &.flex-tiles {
           .tiles {
-            // @include tiles(1);
+            @include tiles(1);
 
             padding: 1em 1em 0;
 
             border: 1px solid $grey-n03;
 
-            // @include min-viewport-width(small) {
-            //   @include tiles(2);
-            // }
-            //
-            // @include min-viewport-width(medium) {
-            //   @include tiles(3);
-            // }
-            //
-            // @include min-viewport-width(huge) {
-            //   @include tiles(4);
-            // }
+            @include min-viewport-width(small) {
+              @include tiles(2);
+            }
+
+            @include min-viewport-width(medium) {
+              @include tiles(3);
+            }
+
+            @include min-viewport-width(huge) {
+              @include tiles(4);
+            }
 
             .tile {
               display: flex;
