@@ -1,0 +1,321 @@
+// @import 'detailer-config';
+// @import 'plugins/detailer/plugin';
+
+@import 'detailer';
+@import 'chassis';
+
+// Import Detailer UI Components
+@import 'detailer/ui-components/buttons';
+// @import 'plugins/detailer/ui-components/forms';
+// @import 'plugins/detailer/ui-components/modal';
+// @import 'plugins/detailer/ui-components/overlay';
+// @import 'plugins/detailer/ui-components/tiles';
+
+.showroom {
+  // Account for sticky footer
+  padding-bottom: 3em;
+
+  .modal {
+    align-self: flex-start;
+    // These stay in Showroom
+    padding: 1.618em;
+    border-radius: $default-border-radius;
+
+    footer {
+      text-align: right;
+
+      .button {
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  > header {
+    padding: 1.46em 0 .90169942em;
+
+    border-bottom: 4px solid $grey-n00;
+
+    @include min-viewport-width(medium) {
+      padding-top: 2.36em;
+
+      .width-constraint {
+        display: flex;
+      }
+    }
+
+    h1 {
+      flex: 1;
+      margin: 0;
+
+      @include font-size(large);
+      color: $grey-n05;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-left: 1em;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  main {
+    @include width-constraint;
+
+    padding-top: 2em;
+
+    @include min-viewport-width(medium) {
+      display: flex;
+      align-items: flex-start;
+
+      padding-top: 3.82em;
+    }
+
+    .sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+
+      @include hide;
+
+      @include min-viewport-width(medium) {
+        @include show;
+
+        flex: 1 0 25%;
+
+        @include block-layout-rules($has-padding: false);
+      }
+
+      margin: 0;
+
+      nav a {
+        display: block;
+
+        @include inline-layout-rules($has-margin: false);
+
+        &:not(:first-child) {
+          box-shadow: 0 -1px 0 0 $grey-n02;
+        }
+
+        &:hover {
+          box-shadow: none;
+          @if variable-exists(hover-default-button-bg-color) {
+            background: $hover-default-button-bg-color;
+          }
+          color: $white;
+          text-decoration: none;
+
+          + a {
+            box-shadow: none;
+          }
+        }
+
+        &:active {
+          @if variable-exists(active-default-button-bg-color) {
+            background: $active-default-button-bg-color;
+          }
+        }
+      }
+    }
+
+    .content {
+      @include min-viewport-width(medium) {
+        padding: 0 0 0 3.82vw;
+      }
+
+      > section {
+
+        h1 {
+          box-shadow: inset 0 -1px 0 0 $grey-n03;
+        }
+
+        &.buttons {
+          .custom-button {
+            @extend %button;
+          }
+
+          .button {
+
+            &.green {
+              background: $green;
+
+              &:hover {
+                background: lighten($green, 2%);
+              }
+              &:active {
+                background: darken($green, 2%);
+              }
+              &.disabled {
+                background: lighten(desaturate($green, 10%), 32%);
+              }
+            }
+          }
+        }
+
+        &.flex-tiles {
+          .tiles {
+            // @include tiles(1);
+
+            padding: 1em 1em 0;
+
+            border: 1px solid $grey-n03;
+
+            // @include min-viewport-width(small) {
+            //   @include tiles(2);
+            // }
+            //
+            // @include min-viewport-width(medium) {
+            //   @include tiles(3);
+            // }
+            //
+            // @include min-viewport-width(huge) {
+            //   @include tiles(4);
+            // }
+
+            .tile {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              height: 3.82em;
+              margin-bottom: 1em;
+
+              @include min-viewport-width(small) {
+                height: 6.18em;
+                margin-bottom: 0;
+              }
+
+              background: $grey-n00;
+
+              &:before {
+                content: 'Tile ' counter(CHASSIS_FLEX_TILE_COUNTER);
+                display: block;
+              }
+            }
+          }
+        }
+
+        &.modals {
+          .open.button {
+            margin-bottom: 0;
+
+            @include max-viewport-width(tiny) {
+              display: block;
+              margin-right: 0;
+            }
+          }
+        }
+
+        &.forms {
+
+        }
+      }
+
+      pre.code {
+        @include block-layout-rules(root);
+        background: lighten($grey-n00, 5%);
+      	box-shadow: 0 0 0 1px $grey-n03;
+      	border-radius: 0 $default-border-radius $default-border-radius 0;
+
+        font-family: Consolas, Courier New, monospace;
+
+        white-space: pre-wrap;
+        word-wrap: break-word;
+
+        &:before {
+          display: block;
+
+          color: $grey-n05;
+        }
+
+        &.html:before {
+          content: 'HTML:';
+        }
+        &.sass:before {
+          content: 'SASS:';
+        }
+        &.javascript:before {
+          content: 'JavaScript:';
+        }
+      }
+
+    }
+
+  }
+
+  > footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 1em 0;
+
+    background: $white;
+    box-shadow: inset 0 1px 0 0 $grey-n05;
+
+    text-align: center;
+
+    .label {
+      font-weight: bold;
+    }
+
+    .range {
+      @include hide;
+
+      @include below-viewport-width(tiny) {
+        &.below-min {
+          @include show(inline);
+        }
+      }
+
+      @include at-viewport-width(tiny) {
+        &.tiny {
+          @include show(inline);
+        }
+      }
+
+      @include at-viewport-width(small) {
+        &.small {
+          @include show(inline);
+        }
+      }
+
+      @include at-viewport-width(medium) {
+        &.medium {
+          @include show(inline);
+        }
+      }
+
+      @include at-viewport-width(large) {
+        &.large {
+          @include show(inline);
+        }
+      }
+
+      @include at-viewport-width(huge) {
+        &.huge {
+          @include show(inline);
+        }
+      }
+
+      @include above-viewport-width(huge) {
+        &.above-max {
+          @include show(inline);
+        }
+      }
+    }
+  }
+
+}

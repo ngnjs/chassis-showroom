@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>NGN Chassis Showroom</title>
+
+    <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+
+    <!-- <script src="lib/ajax.js"></script>
+    <script src="lib/ready.js"></script> -->
+
+    <!-- Keep the SVG in the head (not body) to prevent FOUC -->
+    <!-- <script src="lib/svg.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/webcomponentsjs/latest/webcomponents.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/chassis/1.0.30/chassis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/ngn-components@0.0.34(ngn-cycle.min.js+ngn-layout.min.js+ngn-list.min.js)"></script>
+    <script src="https://rawgit.com/ngnjs/chassis-components/master/dist/chassis-overlay.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheets/main.css">
+
+  </head>
+
+  <body class="ngn chassis showroom">
+    <header>
+      <div class="width-constraint">
+        <h1>NGN Chassis Showroom</h1>
+        <aside class="links">
+          <a href="javascript:;">Documentation</a>
+          <a href="https://github.com/ngnjs" target="_blank">Github</a>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <aside class="sidebar">
+        <nav>
+          <a href="#typography">
+            Typography
+          </a>
+          <a href="#buttons">
+            Buttons
+          </a>
+          <a href="#flex_tiles">
+            Flex Tiles
+          </a>
+          <a href="#modals">
+            Modal Window
+          </a>
+          <a class="disabled" href="javascript:;">
+            A Disabled Link
+          </a>
+        </nav>
+      </aside>
+
+      <div class="content">
+
+        <section id="typography" class="typography">
+          <h1>Heading (h1)</h1>
+          <p>
+            One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
+          </p>
+          <h2>Heading (h2)</h2>
+          <p>
+            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <h3>Heading (h3)</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <h4>Heading (h4)</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <h5>Heading (h5)</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <h6>Heading (h6)</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </section>
+
+        <section id="buttons" class="buttons">
+          <h1>Buttons</h1>
+          <a class="button" href="javascript:;">Default Button</a>
+          <pre class="html code">&lt;a class="button" href="/url">
+  Default Button
+&lt;/a></pre>
+
+          <!-- Create a button without default .button class -->
+          <a class="custom-button" href="javascript:;">Button with Custom Class</a>
+          <pre class="html code">&lt;a class="custom-class" href="/url">
+  Button with Custom Class
+&lt;/a></pre>
+          <pre class="sass code">.custom-class {
+  @extend %button;
+  // additional styles
+}</pre>
+
+          <!-- Disabled Button -->
+          <a class="disabled button" href="javascript:;">Disabled Button</a>
+
+          <!-- Button with custom modifier class -->
+          <a class="green button" href="javascript:;">Button with Modifier</a>
+          <a class="disabled green button" href="javascript:;">Disabled Button with Modifier</a>
+        </section>
+
+        <section id="flex_tiles" class="flex-tiles">
+          <h1>Flex Tiles</h1>
+
+          <p>
+            A fluid, responsive grid of equally-sized tiles with built-in numbering.
+          </p>
+
+          <section class="tiles">
+
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+
+          </section>
+
+          <pre class="html code">&lt;section class="tiles">
+  &lt;article>&lt;/article>
+  &lt;article>&lt;/article>
+  &lt;article>&lt;/article>
+  ...
+&lt;/section></pre>
+
+          <pre class="sass code">.tiles {
+  @include tiles(NUMBER_OF_COLUMNS);
+  // additional styles
+
+  @include min-viewport-width(medium) {
+    @include tiles(DIFFERENT_NUMBER_OF_COLUMNS);
+  }
+}</pre>
+
+        </section>
+
+        <section id="modals" class="modals">
+          <h1>Modal Window</h1>
+          <a class="open button" href="javascript:;">Open Modal Window</a>
+        </section>
+
+        <section id="forms" class="forms">
+          <h1>Forms</h1>
+          <form>
+            <fieldset>
+              <legend>Fieldset Legend</legend>
+
+              <label for="textfield">Textfield</label>
+              <input id="textfield" type="text" name="textfield" value="">
+
+              <label for="textarea">Textarea</label>
+              <textarea name="textarea" rows="3"></textarea>
+            </fieldset>
+            <input type="button" name="button" value="Form Button">
+          </form>
+        </section>
+
+      </div>
+    </main>
+    <footer>
+      <div class="width-constraint">
+        <span class="label">Viewport Width Range:</span>
+
+        <span class="below-min range">
+          Below min: <= 319px
+        </span>
+
+        <span class="tiny range">
+          Tiny: 320 - 511px
+        </span>
+
+        <span class="small range">
+          Small: 512 - 767px
+        </span>
+
+        <span class="medium range">
+          Medium: 768 - 1023px
+        </span>
+
+        <span class="large range">
+          Large: 1024 - 1199px
+        </span>
+
+        <span class="huge range">
+          Huge: 1200 - 1440px (Max)
+        </span>
+
+        <span class="above-max range">
+          Above max: >= 1441px
+        </span>
+      </div>
+    </footer>
+
+    <chassis-overlay>
+      <div class="modal">
+        <header>
+          <h1>Modal Window</h1>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <footer>
+          <a class="okay button" href="#">Okay</a>
+        </footer>
+      </div>
+    </chassis-overlay>
+
+    <script>
+      (function() {
+        // hide body to prevent FOUC
+        document.body.classList.add('hidden');
+        window.addEventListener('WebComponentsReady', function() {
+          // Show body when everything is ready. Delay by a few ms to assure
+          // the custom element is loaded. This is a hack to get around the
+          // requirement of a polyfill in some web browsers that don't natively
+          // support web components yet.
+          setTimeout(function () {
+            document.body.classList.remove('hidden');
+          }, 100)
+        });
+
+        var openButton = document.querySelector('section.modals .open.button');
+        var closeButton = document.querySelector('chassis-overlay .okay.button');
+        var overlay = document.querySelector('chassis-overlay');
+
+        openButton.addEventListener('click', function() {
+          overlay.open();
+        });
+        closeButton.addEventListener('click', function() {
+          overlay.close();
+        });
+      })();
+    </script>
+  </body>
+</html>

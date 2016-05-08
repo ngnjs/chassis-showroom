@@ -1,0 +1,31 @@
+{
+  "name": "chassis-showroom-dev",
+  "version": "1.0.0",
+  "description": "Development and test environment for chassis-showroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngnjs/chassis-showroom-dev.git"
+  },
+  "keywords": [
+    "chassis",
+    "showroom",
+    "ngn"
+  ],
+  "author": "Graham Butler",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ngnjs/chassis-showroom-dev/issues"
+  },
+  "homepage": "https://github.com/ngnjs/chassis-showroom-dev#readme",
+  "devDependencies": {
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-header": "^1.7.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.1.0"
+  }
+}
