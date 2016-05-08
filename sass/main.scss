@@ -140,7 +140,7 @@
 
         &.buttons {
           .custom-button {
-            @extend %button;
+            // @extend %button;
           }
 
           .button {
@@ -216,7 +216,9 @@
         }
 
         &.forms {
-
+          form *:last-child {
+            margin-bottom: 0;
+          }
         }
       }
 

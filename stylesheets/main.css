@@ -139,7 +139,7 @@ Viewport Width-specific styles can be applied in 5 different ways:
  * @param {map-key} $specified-range
  * from ./config/breakpoints or custom theme file
  */
-.chassis .button, .chassis button, .showroom main .content > section.buttons .custom-button {
+.chassis .button, .chassis button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -148,7 +148,7 @@ Viewport Width-specific styles can be applied in 5 different ways:
   -o-user-select: none;
   user-select: none; }
 
-.chassis a.disabled:not(.button), .chassis .disabled.button, .chassis button.disabled, .showroom main .content > section.buttons .disabled.custom-button {
+.chassis a.disabled:not(.button), .chassis .disabled.button, .chassis button.disabled {
   pointer-events: none; }
 
 *, *:before, *:after {
@@ -517,20 +517,8 @@ html {
       .chassis textarea {
         line-height: 31px; } }
 
-.chassis .button, .chassis button, .showroom main .content > section.buttons .custom-button {
+.chassis .button, .chassis button {
   display: inline-block;
-  margin: 0 0.80902em 1.61803em 0;
-  padding: 0 0.80902em;
-  line-height: 2.61803em;
-  margin: 0 0.80902em 1.61803em 0;
-  padding: 0 0.80902em;
-  line-height: 2.61803em;
-  margin: 0 0.80902em 1.61803em 0;
-  padding: 0 0.80902em;
-  line-height: 2.61803em;
-  margin: 0 0.80902em 1.61803em 0;
-  padding: 0 0.80902em;
-  line-height: 2.61803em;
   margin: 0 0.80902em 1.61803em 0;
   padding: 0 0.80902em;
   line-height: 2.61803em;
@@ -545,16 +533,16 @@ html {
   text-transform: none;
   color: white;
   cursor: pointer; }
-  .chassis .button:link, .chassis button:link, .showroom main .content > section.buttons .custom-button:link {
+  .chassis .button:link, .chassis button:link {
     color: white; }
-  .chassis .button:hover, .chassis button:hover, .showroom main .content > section.buttons .custom-button:hover {
+  .chassis .button:hover, .chassis button:hover {
     background: #00a2f5; }
-  .chassis .button:active, .chassis button:active, .showroom main .content > section.buttons .custom-button:active {
+  .chassis .button:active, .chassis button:active {
     background: #0091dc; }
-  .chassis .disabled.button, .chassis button.disabled, .showroom main .content > section.buttons .disabled.custom-button {
+  .chassis .disabled.button, .chassis button.disabled {
     background: rgba(0, 152, 230, 0.382);
     color: white; }
-  .chassis .button:focus, .chassis button:focus, .showroom main .content > section.buttons .custom-button:focus {
+  .chassis .button:focus, .chassis button:focus {
     outline: none; }
 
 .chassis {
@@ -583,32 +571,8 @@ html {
   .chassis input {
     margin: 0 0.80902em 1.61803em 0;
     padding: 0 0.80902em;
-    line-height: 2.61803em;
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0 0.80902em;
-    line-height: 2.61803em;
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0 0.80902em;
-    line-height: 2.61803em;
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0 0.80902em;
-    line-height: 2.61803em;
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0 0.80902em;
     line-height: 2.61803em; }
   .chassis textarea {
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0.5em 0.80902em;
-    line-height: 1.61803em;
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0.5em 0.80902em;
-    line-height: 1.61803em;
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0.5em 0.80902em;
-    line-height: 1.61803em;
-    margin: 0 0.80902em 1.61803em 0;
-    padding: 0.5em 0.80902em;
-    line-height: 1.61803em;
     margin: 0 0.80902em 1.61803em 0;
     padding: 0.5em 0.80902em;
     line-height: 1.61803em;
@@ -729,21 +693,9 @@ html {
           visibility: visible;
           opacity: 1;
           flex: 1 0 25%;
-          margin: 0 0 1.61803em 0;
-          margin: 0 0 1.61803em 0;
-          margin: 0 0 1.61803em 0;
-          margin: 0 0 1.61803em 0;
           margin: 0 0 1.61803em 0; } }
       .showroom main .sidebar nav a {
         display: block;
-        padding: 0 0.80902em;
-        line-height: 2.61803em;
-        padding: 0 0.80902em;
-        line-height: 2.61803em;
-        padding: 0 0.80902em;
-        line-height: 2.61803em;
-        padding: 0 0.80902em;
-        line-height: 2.61803em;
         padding: 0 0.80902em;
         line-height: 2.61803em; }
         .showroom main .sidebar nav a:not(:first-child) {
@@ -890,15 +842,9 @@ html {
         .showroom main .content > section.modals .open.button {
           display: block;
           margin-right: 0; } }
+    .showroom main .content > section.forms form *:last-child {
+      margin-bottom: 0; }
     .showroom main .content pre.code {
-      margin: 0 0 1.61803em 0;
-      padding: 0.5em 1em;
-      margin: 0 0 1.61803em 0;
-      padding: 0.5em 1em;
-      margin: 0 0 1.61803em 0;
-      padding: 0.5em 1em;
-      margin: 0 0 1.61803em 0;
-      padding: 0.5em 1em;
       margin: 0 0 1.61803em 0;
       padding: 0.5em 1em;
       background: #fafafa;
