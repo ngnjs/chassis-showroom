@@ -1,7 +1,7 @@
+// @import 'themes/ocean';
 
-// @import 'detailer-config';
-@import 'detailer';
 @import 'chassis';
+@import 'detailer';
 
 // Import Detailer UI Components
 @import 'detailer/ui-components/buttons';
@@ -140,7 +140,7 @@
 
         &.buttons {
           .custom-button {
-            // @extend %button;
+            @extend %button;
           }
 
           .button {
