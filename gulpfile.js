@@ -26,6 +26,7 @@ gulp.task('sasscompile', function () {
   return gulp.src([SHOWROOM])
     .pipe(
       sass({
+        outputStyle: 'compressed',
         includePaths: [
           CHASSIS.DETAILER,
           CHASSIS.SASS,
