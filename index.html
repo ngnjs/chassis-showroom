@@ -168,12 +168,58 @@
           <form>
             <fieldset>
               <legend>Fieldset Legend</legend>
-
-              <label for="textfield">Textfield</label>
-              <input id="textfield" type="text" name="textfield" value="">
-
-              <label for="textarea">Textarea</label>
-              <textarea name="textarea" rows="3"></textarea>
+              
+              <div class="text field">
+                <label for="textfield">Text Input</label>
+                <input id="textfield" type="text" name="textfield" value="" required>
+              </div>
+              
+              <div class="textarea field">
+                <label for="textarea">Textarea</label>
+                <textarea id="textarea" name="textarea" rows="3" required></textarea>
+              </div>
+              
+              <div class="row">
+                <div class="optional text field">
+                  <label for="numberfield">Number Input</label>
+                  <input id="numberfield" type="number" name="numberfield" value="">
+                </div>
+                <div class="text field">
+                  <label for="datefield">Date Input</label>
+                  <input id="datefield" type="date" name="datefield" value="" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="group">
+                  <div class="checkbox field">
+                    <input id="checkbox_1" type="checkbox" required>
+                    <label for="checkbox_1">Checkbox</label>
+                  </div>
+                  <div class="checkbox field">
+                    <input id="checkbox_2" type="checkbox" required>
+                    <label for="checkbox_2">Checkbox</label>
+                  </div>
+                  <div class="checkbox field">
+                    <input id="checkbox_3" type="checkbox" required>
+                    <label for="checkbox_3">Checkbox</label>
+                  </div>
+                </div>
+                <div class="group">
+                  <div class="radio field">
+                    <input id="radio_1" type="radio" name="radios" required>
+                    <label for="radio_1">Radio Button</label>
+                  </div>
+                  <div class="radio field">
+                    <input id="radio_2" type="radio" name="radios" required>
+                    <label for="radio_2">Radio Button</label>
+                  </div>
+                  <div class="radio field">
+                    <input id="radio_3" type="radio" name="radios" required>
+                    <label for="radio_3">Radio Button</label>
+                  </div>
+                </div>
+              </div>
             </fieldset>
             <button type="submit">Submit</button>
           </form>

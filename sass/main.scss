@@ -4,11 +4,7 @@
 @import 'detailer';
 
 // Import Detailer UI Components
-@import 'detailer/ui-components/buttons';
-@import 'detailer/ui-components/forms';
-@import 'detailer/ui-components/modal';
-@import 'detailer/ui-components/overlay';
-@import 'detailer/ui-components/tiles';
+@import 'detailer/ui-components/all';
 
 .showroom {
   // Account for sticky footer
@@ -216,9 +212,7 @@
         }
 
         &.forms {
-          form *:last-child {
-            margin-bottom: 0;
-          }
+          
         }
       }
 
