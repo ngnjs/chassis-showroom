@@ -1,5 +1,5 @@
 {
-  "name": "chassis-showroom-dev",
+  "name": "chassis-showroom",
   "version": "1.0.0",
   "description": "Development and test environment for chassis-showroom",
   "main": "index.js",
