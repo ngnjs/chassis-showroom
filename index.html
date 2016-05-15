@@ -171,22 +171,30 @@
 
               <div class="text field">
                 <label for="textfield">Text Input</label>
-                <input id="textfield" type="text" name="textfield" value="" required>
+                <div class="input">
+                  <input id="textfield" type="text" name="textfield" value="" required>
+                </div>
               </div>
 
               <div class="textarea field">
                 <label for="textarea">Textarea</label>
-                <textarea id="textarea" name="textarea" rows="3" required></textarea>
+                <div class="input">
+                  <textarea id="textarea" name="textarea" rows="3" required></textarea>
+                </div>
               </div>
 
               <div class="row">
                 <div class="optional text field">
                   <label for="numberfield">Number Input</label>
-                  <input id="numberfield" type="number" name="numberfield" value="">
+                  <div class="input">
+                    <input id="numberfield" type="number" name="numberfield" value="">
+                  </div>
                 </div>
                 <div class="text field">
                   <label for="datefield">Date Input</label>
-                  <input id="datefield" type="date" name="datefield" value="" required>
+                  <div class="input">
+                    <input id="datefield" type="date" name="datefield" value="" required>
+                  </div>
                 </div>
               </div>
 
@@ -222,7 +230,7 @@
               </div>
               <div class="text field">
                 <label for="browser">Input with Additional Tools</label>
-                <div class="group">
+                <div class="input">
                   <input id="browser" type="text" name="browser" value="" required>
                   <a class="button" href="javascript:;">
                     Browse&hellip;
