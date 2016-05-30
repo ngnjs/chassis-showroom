@@ -112,6 +112,12 @@
           <!-- Button with custom modifier class -->
           <a class="green button" href="javascript:;">Button with Modifier</a>
           <a class="disabled green button" href="javascript:;">Disabled Button with Modifier</a>
+
+          <div class="button-bar">
+            <a class="button" href="javascript:;">Button 1</a>
+            <a class="button" href="javascript:;">Button 2</a>
+            <a class="button" href="javascript:;">Button 3</a>
+          </div>
         </section>
 
         <section id="flex_tiles" class="flex-tiles">
@@ -183,6 +189,18 @@
                 </div>
               </div>
 
+              <div class="browser field">
+                <label for="browser_input">Log file path</label>
+                <div class="input">
+                  <div class="browser">
+                    <input id="browser_input" type="text">
+                    <a class="button">
+                      Browse&hellip;
+                    </a>
+                  </div>
+                </div>
+              </div>
+
               <div class="row">
                 <div class="optional text field">
                   <label for="numberfield">Number Input</label>
@@ -233,7 +251,7 @@
                 <div class="input">
                   <input id="browser" type="text" name="browser" value="" required>
                   <a class="button" href="javascript:;">
-                    Browse&hellip;
+                    Add
                   </a>
                 </div>
               </div>
