@@ -91,33 +91,65 @@
 
         <section id="buttons" class="buttons">
           <h1>Buttons</h1>
-          <a class="button" href="javascript:;">Default Button</a>
-          <pre class="html code">&lt;a class="button" href="/url">
+          
+          <section class="default buttons">
+            <a class="button" href="javascript:;">Default Button</a>
+            <!-- Disabled Button -->
+            <a class="disabled button" href="javascript:;">Disabled Button</a>
+            <pre class="html code">&lt;a class="button" href="/url">
   Default Button
 &lt;/a></pre>
 
-          <!-- Create a button without default .button class -->
-          <a class="custom-button" href="javascript:;">Button with Custom Class</a>
-          <pre class="html code">&lt;a class="custom-class" href="/url">
+            <!-- Create a button without default .button class -->
+            <a class="custom-button" href="javascript:;">Button with Custom Class</a>
+            <a class="disabled custom-button" href="javascript:;">Disabled Button with Custom Class</a>
+            <pre class="html code">&lt;a class="custom-class" href="/url">
   Button with Custom Class
 &lt;/a></pre>
-          <pre class="sass code">.custom-class {
+            <pre class="sass code">.custom-class {
   @extend %button;
   // additional styles
 }</pre>
-
-          <!-- Disabled Button -->
-          <a class="disabled button" href="javascript:;">Disabled Button</a>
-
-          <!-- Button with custom modifier class -->
-          <a class="green button" href="javascript:;">Button with Modifier</a>
-          <a class="disabled green button" href="javascript:;">Disabled Button with Modifier</a>
-
-          <!-- <div class="button-bar">
-            <a class="button" href="javascript:;">Button 1</a>
-            <a class="button" href="javascript:;">Button 2</a>
-            <a class="button" href="javascript:;">Button 3</a>
-          </div> -->
+          </section>
+          
+          <section class="custom buttons">  
+            <h2>Custom Buttons</h2>
+            <a class="outlined button" href="#">Outlined Button</a>
+            <a class="disabled outlined button" href="#">Outlined Button</a>
+            <pre class="html code">&lt;a class="outlined button" href="/url">
+  Outlined Button
+&lt;/a></pre>
+            <pre class="sass code">.outlined.button {
+  @include chassis-button((
+    default: (
+      bg-color: $white,
+      text-color: $grey-n07,
+      has-border: true,
+      border-thickness: 2px,
+      border-color: $grey-n03
+    ),
+    hover: (
+      bg-color: $grey-n01,
+      text-color: $text-color
+    ),
+    active: (
+      bg-color: $grey-n02,
+      text-color: $text-color
+    )
+  ));
+}</pre>
+  
+            <a class="button with-shadow" href="javascript:;">Button with Shadow</a>
+            
+            <!-- Button with custom modifier class -->
+            <a class="green button" href="javascript:;">Button with Modifier</a>
+            <a class="disabled green button" href="javascript:;">Disabled Button with Modifier</a>
+            <!-- <div class="button-bar">
+              <a class="button" href="javascript:;">Button 1</a>
+              <a class="button" href="javascript:;">Button 2</a>
+              <a class="button" href="javascript:;">Button 3</a>
+            </div> -->
+          </section>
         </section>
 
         <section id="flex_tiles" class="flex-tiles">

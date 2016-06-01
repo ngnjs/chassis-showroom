@@ -11,14 +11,40 @@
   padding-bottom: 3em;
   
   // Demo button customization
-  // .button {
-  //   @include chassis-button((
-  //     default: (),
-  //     hover: (
-  //       bg-color: red
-  //     )
-  //   ));
-  // }
+  .outlined.button {
+    @include chassis-button((
+      default: (
+        bg-color: $white,
+        text-color: $grey-n07,
+        has-border: true,
+        border-thickness: 2px,
+        border-color: $grey-n03
+      ),
+      hover: (
+        bg-color: $grey-n01,
+        text-color: $text-color
+      ),
+      active: (
+        bg-color: $grey-n02,
+        text-color: $text-color
+      ),
+      disabled: (
+        bg-color: $white,
+        text-color: $grey-n02,
+        border-color: $grey-n00
+      )
+    ));
+  }
+  
+  .button.with-shadow {
+    @include chassis-button((
+      default: (
+        box-shadow: (
+          0 3px 3px 0 $grey-n05,
+        )
+      )
+    ));
+  }
 
   .modal {
     align-self: flex-start;
@@ -146,7 +172,7 @@
 
         &.buttons {
           .custom-button {
-            @extend %button;
+            @extend %chassis-button;
           }
 
           .button {
