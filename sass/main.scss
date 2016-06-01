@@ -9,6 +9,16 @@
 .showroom {
   // Account for sticky footer
   padding-bottom: 3em;
+  
+  // Demo button customization
+  // .button {
+  //   @include chassis-button((
+  //     default: (),
+  //     hover: (
+  //       bg-color: red
+  //     )
+  //   ));
+  // }
 
   .modal {
     align-self: flex-start;
