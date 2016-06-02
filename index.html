@@ -60,32 +60,41 @@
       <div class="content">
 
         <section id="typography" class="typography">
-          <h1>Heading (h1)</h1>
+          <h1>Typography (h1)</h1>
           <p>
-            One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
+            Chassis is a SASS-based CSS framework for building fluid, responsive websites that are consistent in design throughout. "Who cares?" you ask. Well, Chassis has a few key differences from other CSS frameworks:
           </p>
-          <h2>Heading (h2)</h2>
+          <h2>Typography is automatically optimized to your custom breakpoints</h2>
           <p>
-            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+            Chassis has good typography built-in. It automatically calculates optimal font-size and line-height for every viewport size, using its default set of breakpoints or your own custom set.
+          </p>
+          <h2>Every element of your web page adheres to these typography rules</h2>
+          <p>
+            Chassis is the only CSS framework in the world that bases the layout of all elements on typography rules. This means that not only will your typography automatically adjust to any screen size, <span class="bold">so will every other element on the page.</span>
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Try it. Go ahead and shrink this window and watch how every element on the page scales appropriately. This all happens automatically, with no messy CSS.
           </p>
-          <h3>Heading (h3)</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Typography is one of the most important parts of modern website design, and with Chassis it is taken care of for you.
           </p>
-          <h4>Heading (h4)</h4>
+          <h2>Golden Ratio Typography</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            The typography rules inherent in Chassis weren't chosen arbitrarily; They are based on time-tested Golden Ratio Typography, optimized for the web. Not only that, but you can also specify different type scales if you choose.
           </p>
-          <h5>Heading (h5)</h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            In the event that you need more fine-grained control over individual pieces of typography, you can still specify font-sizes and line-heights as you normally would.
           </p>
-          <h6>Heading (h6)</h6>
+          <h1>Get all the UI elements you need with Chassis Detailer</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            You can use Chassis's typography-based layout system by itself if you'd like, but if you need UI elements to work with, it is as simple as adding Chassis Detailer.
+          </p>
+          <p>
+            Chassis Detailer contains a suite of UI components, all of which are fully themeable and work seamlessly with the Chassis typography-based layout system.
+          </p>
+          <h1>The most semantic framework</h1>
+          <p>
+            Chassis applies the principles of <a href="http://www.symbiocss.com" target="_blank">SymbioCSS</a> to provide the cleanest, most semantic HTML/CSS development experience possible. 
           </p>
         </section>
 
@@ -93,16 +102,16 @@
           <h1>Buttons</h1>
           
           <section class="default buttons">
-            <a class="button" href="javascript:;">Default Button</a>
+            <a class="button" href="#">Default Button</a>
             <!-- Disabled Button -->
-            <a class="disabled button" href="javascript:;">Disabled Button</a>
+            <a class="disabled button" href="#">Disabled Button</a>
             <pre class="html code">&lt;a class="button" href="/url">
   Default Button
 &lt;/a></pre>
 
             <!-- Create a button without default .button class -->
-            <a class="custom-button" href="javascript:;">Button with Custom Class</a>
-            <a class="disabled custom-button" href="javascript:;">Disabled Button with Custom Class</a>
+            <a class="custom-button" href="#">Button with Custom Class</a>
+            <a class="disabled custom-button" href="#">Disabled Button with Custom Class</a>
             <pre class="html code">&lt;a class="custom-class" href="/url">
   Button with Custom Class
 &lt;/a></pre>
@@ -122,32 +131,34 @@
             <pre class="sass code">.outlined.button {
   @include chassis-button((
     default: (
-      bg-color: $white,
-      text-color: $grey-n07,
+      bg-color: #FFF,
+      text-color: #77787C,
       has-border: true,
       border-thickness: 2px,
-      border-color: $grey-n03
+      border-color: #D1D2D4
     ),
     hover: (
-      bg-color: $grey-n01,
-      text-color: $text-color
+      bg-color: #E2E3E5,
+      text-color: #77787C
     ),
     active: (
-      bg-color: $grey-n02,
-      text-color: $text-color
+      bg-color: #DADBDD,
+      text-color: #77787C
     )
   ));
 }</pre>
   
-            <a class="button with-shadow" href="javascript:;">Button with Shadow</a>
+            <a class="button with-shadow" href="#">Button with Shadow</a>
+            <a class="disabled button with-shadow" href="#">Disabled Button with Shadow</a>
             
+            <br>
             <!-- Button with custom modifier class -->
-            <a class="green button" href="javascript:;">Button with Modifier</a>
-            <a class="disabled green button" href="javascript:;">Disabled Button with Modifier</a>
+            <a class="green button" href="#">Button with Modifier</a>
+            <a class="disabled green button" href="#">Disabled Button with Modifier</a>
             <!-- <div class="button-bar">
-              <a class="button" href="javascript:;">Button 1</a>
-              <a class="button" href="javascript:;">Button 2</a>
-              <a class="button" href="javascript:;">Button 3</a>
+              <a class="button" href="#">Button 1</a>
+              <a class="button" href="#">Button 2</a>
+              <a class="button" href="#">Button 3</a>
             </div> -->
           </section>
         </section>

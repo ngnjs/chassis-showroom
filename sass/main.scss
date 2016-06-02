@@ -6,6 +6,10 @@
 // Import Detailer UI Components
 @import 'detailer/ui-components/all';
 
+.bold {
+  font-weight: $bold !important;
+}
+
 .showroom {
   // Account for sticky footer
   padding-bottom: 3em;
@@ -18,7 +22,7 @@
         text-color: $grey-n07,
         has-border: true,
         border-thickness: 2px,
-        border-color: $grey-n03
+        border-color: $grey-n04
       ),
       hover: (
         bg-color: $grey-n01,
@@ -27,11 +31,6 @@
       active: (
         bg-color: $grey-n02,
         text-color: $text-color
-      ),
-      disabled: (
-        bg-color: $white,
-        text-color: $grey-n02,
-        border-color: $grey-n00
       )
     ));
   }
