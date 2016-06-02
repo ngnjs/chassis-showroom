@@ -64,27 +64,36 @@
           <p>
             Chassis is a SASS-based CSS framework for building fluid, responsive websites that are consistent in design throughout. "Who cares?" you ask. Well, Chassis has a few key differences from other CSS frameworks:
           </p>
-          <h2>Typography is automatically optimized to your custom breakpoints</h2>
-          <p>
-            Chassis has good typography built-in. It automatically calculates optimal font-size and line-height for every viewport size, using its default set of breakpoints or your own custom set.
-          </p>
-          <h2>Every element of your web page adheres to these typography rules</h2>
-          <p>
-            Chassis is the only CSS framework in the world that bases the layout of all elements on typography rules. This means that not only will your typography automatically adjust to any screen size, <span class="bold">so will every other element on the page.</span>
-          </p>
-          <p>
-            Try it. Go ahead and shrink this window and watch how every element on the page scales appropriately. This all happens automatically, with no messy CSS.
-          </p>
-          <p>
-            Typography is one of the most important parts of modern website design, and with Chassis it is taken care of for you.
-          </p>
-          <h2>Golden Ratio Typography</h2>
-          <p>
-            The typography rules inherent in Chassis weren't chosen arbitrarily; They are based on time-tested Golden Ratio Typography, optimized for the web. Not only that, but you can also specify different type scales if you choose.
-          </p>
-          <p>
-            In the event that you need more fine-grained control over individual pieces of typography, you can still specify font-sizes and line-heights as you normally would.
-          </p>
+          <section>
+            <h2>Typography is automatically optimized to your custom breakpoints</h2>
+            <p>
+              Chassis has good typography built-in. It automatically calculates optimal font-size and line-height for every viewport size, using its default set of breakpoints or your own custom set.
+            </p>
+          </section>
+          <section>
+            <h2>Every element of your web page adheres to these typography rules</h2>
+            <p>
+              Chassis is the only CSS framework in the world that bases the layout of all elements on typography rules. This means that not only will your typography automatically adjust to any screen size, <span class="bold">so will every other element on the page.</span>
+            </p>
+            <p>
+              Try it. Go ahead and shrink this window and watch how every element on the page scales appropriately. This all happens automatically, with no messy CSS or JavaScript.
+            </p>
+            <p>
+              Typography is one of the most important parts of modern website design, and with Chassis it is taken care of for you.
+            </p>
+          </section>
+          <section>
+            <h2>Golden Ratio Typography</h2>
+            <p>
+              The typography rules inherent in Chassis weren't chosen arbitrarily; They are based on time-tested Golden Ratio Typography, optimized for the web. Not only that, but you can also specify different type scales if you choose.
+            </p>
+            <p>
+              In the event that you need more fine-grained control over individual pieces of typography, you can still specify font-sizes and line-heights as you normally would.
+            </p>
+          </section>
+        </section>
+        
+        <section>
           <h1>Get all the UI elements you need with Chassis Detailer</h1>
           <p>
             You can use Chassis's typography-based layout system by itself if you'd like, but if you need UI elements to work with, it is as simple as adding Chassis Detailer.
@@ -92,9 +101,14 @@
           <p>
             Chassis Detailer contains a suite of UI components, all of which are fully themeable and work seamlessly with the Chassis typography-based layout system.
           </p>
+        </section>
+        <section>
           <h1>The most semantic framework</h1>
           <p>
-            Chassis applies the principles of <a href="http://www.symbiocss.com" target="_blank">SymbioCSS</a> to provide the cleanest, most semantic HTML/CSS development experience possible. 
+            Chassis applies the principles of <a href="http://www.symbiocss.com" target="_blank">SymbioCSS</a> to provide the cleanest, most semantic HTML/CSS development experience possible. There are no cryptic class names to decipher, no proprietary HTML attributes, and every CSS selector reads like a short English phrase.
+          </p>
+          <p>
+            In addition, Chassis is totally self-contained. You are free to use any style of HTML or CSS in your own stylesheets without having to worry about scoping conflicts.
           </p>
         </section>
 
@@ -116,7 +130,7 @@
   Button with Custom Class
 &lt;/a></pre>
             <pre class="sass code">.custom-class {
-  @extend %button;
+  @extend %chassis-button;
   // additional styles
 }</pre>
           </section>
