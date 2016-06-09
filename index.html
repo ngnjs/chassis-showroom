@@ -78,9 +78,6 @@
             <p>
               Try it. Go ahead and shrink this window and watch how every element on the page scales appropriately. This all happens automatically, with no messy CSS or JavaScript.
             </p>
-            <p>
-              Typography is one of the most important parts of modern website design, and with Chassis it is taken care of for you.
-            </p>
           </section>
           <section>
             <h2>Golden Ratio Typography</h2>
@@ -94,13 +91,21 @@
         </section>
         
         <section>
-          <h1>Get all the UI elements you need with Chassis Detailer</h1>
-          <p>
-            You can use Chassis's typography-based layout system by itself if you'd like, but if you need UI elements to work with, it is as simple as adding Chassis Detailer.
-          </p>
-          <p>
-            Chassis Detailer contains a suite of UI components, all of which are fully themeable and work seamlessly with the Chassis typography-based layout system.
-          </p>
+          <section>
+            <h1>Get all the UI elements you need with Chassis Detailer</h1>
+            <p>
+              You can use Chassis's typography-based layout system by itself if you'd like, but if you need UI elements to work with, it is as simple as adding Chassis Detailer.
+            </p>
+            <p>
+              Chassis Detailer contains a suite of UI components, all of which are fully themeable and work seamlessly with the Chassis typography-based layout system.
+            </p>
+          </section>
+          <section>
+            <h2>Only load the components you need</h2>
+            <p>
+              Chassis Detailer allows you to import exactly what you need, and nothing you don't, keeping CSS file size to a minimum.
+            </p>
+          </section>
         </section>
         <section>
           <h1>The most semantic framework</h1>
@@ -135,11 +140,12 @@
 }</pre>
           </section>
           
-          <section class="custom buttons">  
-            <h2>Custom Buttons</h2>
-            <a class="outlined button" href="#">Outlined Button</a>
-            <a class="disabled outlined button" href="#">Outlined Button</a>
-            <pre class="html code">&lt;a class="outlined button" href="/url">
+          <section class="custom buttons">
+            <section>
+              <h2>Custom Buttons</h2>
+              <a class="outlined button" href="#">Outlined Button</a>
+              <a class="disabled outlined button" href="#">Outlined Button</a>
+              <pre class="html code">&lt;a class="outlined button" href="/url">
   Outlined Button
 &lt;/a></pre>
             <pre class="sass code">.outlined.button {
@@ -160,20 +166,30 @@
       text-color: #77787C
     )
   ));
-}</pre>
-  
-            <a class="button with-shadow" href="#">Button with Shadow</a>
-            <a class="disabled button with-shadow" href="#">Disabled Button with Shadow</a>
+}</pre>  
+            </section>
             
-            <br>
-            <!-- Button with custom modifier class -->
-            <a class="green button" href="#">Button with Modifier</a>
-            <a class="disabled green button" href="#">Disabled Button with Modifier</a>
-            <!-- <div class="button-bar">
-              <a class="button" href="#">Button 1</a>
-              <a class="button" href="#">Button 2</a>
-              <a class="button" href="#">Button 3</a>
-            </div> -->
+            <section>
+              <h2>More Custom Buttons</h2>
+              <a class="button with-shadow" href="#">Button with Shadow</a>
+              <a class="disabled button with-shadow" href="#">Disabled Button with Shadow</a>
+              
+              <br>
+              <!-- Button with custom modifier class -->
+              <a class="green button" href="#">Button with Modifier</a>
+              <a class="disabled green button" href="#">Disabled Button with Modifier</a>
+              
+              <br>
+              <!-- Button with Gradient Bevel -->
+              <a class="beveled button" href="#">Beveled Button</a>
+              <a class="disabled beveled button" href="#">Disabled Beveled Button</a>
+              
+              <!-- <div class="button-bar">
+                <a class="button" href="#">Button 1</a>
+                <a class="button" href="#">Button 2</a>
+                <a class="button" href="#">Button 3</a>
+              </div> -->
+            </section>
           </section>
         </section>
 
@@ -184,7 +200,7 @@
             A fluid, responsive grid of equally-sized tiles with built-in numbering.
           </p>
 
-          <section class="tiles">
+          <div class="tiles">
 
             <div class="tile"></div>
             <div class="tile"></div>
@@ -201,7 +217,7 @@
             <div class="tile"></div>
             <div class="tile"></div>
 
-          </section>
+          </div>
 
           <pre class="html code">&lt;section class="tiles">
   &lt;article>&lt;/article>

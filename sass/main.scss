@@ -38,11 +38,31 @@
   .button.with-shadow {
     @include chassis-button((
       default: (
-        box-shadow: (
-          0 3px 3px 0 $grey-n05,
-        )
+        box-shadow: 0 3px 3px 0 $grey-n05
       )
     ));
+  }
+  
+  .beveled.button {
+    @include chassis-button((
+      default: (
+        bg-color: linear-gradient(to bottom, $grey-n00 0%, $grey-n03 100%),
+        text-color: $grey-n09,
+        box-shadow: inset 0 -2px 0 0 $grey-n04
+      ),
+      hover: (
+        bg-color: linear-gradient(to bottom, $grey-n01 0%, $grey-n04 100%),
+        text-color: $grey-n10,
+        box-shadow: inset 0 -2px 0 0 $grey-n05
+      ),
+      active: (
+        bg-color: linear-gradient(to bottom, $grey-n04 0%, $grey-n01 100%),
+        text-color: $grey-n10,
+        box-shadow: inset 0 2px 0 0 $grey-n05
+      )
+    ));
+    
+    text-shadow: 1px 1px 2px $white;
   }
 
   .modal {
@@ -194,6 +214,7 @@
 
         &.flex-tiles {
           .tiles {
+            @include block-layout-rules($has-padding: false);
             @include tiles(1);
 
             padding: 1em 1em 0;
