@@ -13,7 +13,7 @@
 .showroom {
   // Account for sticky footer
   padding-bottom: 3em;
-  
+
   // Demo button customization
   .outlined.button {
     @include chassis-button((
@@ -34,7 +34,7 @@
       )
     ));
   }
-  
+
   .button.with-shadow {
     @include chassis-button((
       default: (
@@ -42,7 +42,7 @@
       )
     ));
   }
-  
+
   .beveled.button {
     @include chassis-button((
       default: (
@@ -61,7 +61,7 @@
         box-shadow: inset 0 2px 0 0 $grey-n05
       )
     ));
-    
+
     text-shadow: 1px 1px 2px $white;
   }
 
