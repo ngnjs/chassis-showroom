@@ -432,16 +432,16 @@ or
     <script>
       (function() {
         // hide body to prevent FOUC
-        document.body.classList.add('hidden');
-        window.addEventListener('WebComponentsReady', function() {
-          // Show body when everything is ready. Delay by a few ms to assure
-          // the custom element is loaded. This is a hack to get around the
-          // requirement of a polyfill in some web browsers that don't natively
-          // support web components yet.
-          setTimeout(function () {
-            document.body.classList.remove('hidden');
-          }, 100)
-        });
+        // document.body.classList.add('hidden');
+        // window.addEventListener('WebComponentsReady', function() {
+        //   // Show body when everything is ready. Delay by a few ms to assure
+        //   // the custom element is loaded. This is a hack to get around the
+        //   // requirement of a polyfill in some web browsers that don't natively
+        //   // support web components yet.
+        //   setTimeout(function () {
+        //     document.body.classList.remove('hidden');
+        //   }, 100)
+        // });
 
         var openButton = document.querySelector('section.modals .open.button');
         var closeButton = document.querySelector('chassis-overlay .okay.button');
@@ -453,6 +453,37 @@ or
         closeButton.addEventListener('click', function() {
           overlay.close();
         });
+        
+        var computedLineHeightContainers = document.querySelectorAll('.compute-line-height');
+        
+        setLineHeight(computedLineHeightContainers);
+        
+        window.addEventListener('resize', function() {
+          setLineHeight(computedLineHeightContainers);
+        });
+        
+        function setLineHeight(containers) {
+          for ( var i = 0; i < containers.length; i++ ) {
+            containers[i].style.lineHeight = calculateLineHeight(containers[i].clientWidth) + 'em';
+          }
+        }
+        
+        function calculateLineHeight(lineWidth) {
+          var gr = 1.61803398875;
+          
+          var optimalLine = getOptimalLineDimensions(16, gr);
+          
+          return (
+            gr - ( ( 1 / ( 2 * gr ) ) * ( 1 - ( lineWidth / optimalLine.width ) ) )
+          );
+        }
+        
+        function getOptimalLineDimensions(fontSize, ratio) {
+          return {
+            height: fontSize * ratio,
+            width: Math.pow( (fontSize * ratio), 2 )
+          }
+        }
       })();
     </script>
   </body>
