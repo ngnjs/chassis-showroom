@@ -1,6 +1,6 @@
 @import 'chassis';
 
-@import 'themes/ocean';
+// @import 'themes/ocean';
 @import 'detailer';
 
 // Import Detailer UI Components
@@ -12,89 +12,7 @@
 
 .showroom {
   // Account for sticky footer
-  padding-bottom: 3em;
-  
-  // Demo button customization
-  .button {
-    &.outlined {
-      @include chassis-button((
-        default: (
-          bg-color: $white,
-          text-color: $grey-n07,
-          has-border: true,
-          border-thickness: 2px,
-          border-color: $grey-n04
-        ),
-        hover: (
-          bg-color: $grey-n01,
-          text-color: $text-color
-        ),
-        active: (
-          bg-color: $grey-n02,
-          text-color: $text-color
-        )
-      ));
-    }
-
-    &.with-shadow {
-      @include chassis-button((
-        default: (
-          box-shadow: 0 3px 3px 0 $grey-n05
-        )
-      ));
-    }
-
-    &.beveled {
-      @include chassis-button((
-        default: (
-          bg-color: linear-gradient(to bottom, $grey-n00 0%, $grey-n03 100%),
-          text-color: $grey-n09,
-          box-shadow: inset 0 -2px 0 0 $grey-n04
-        ),
-        hover: (
-          bg-color: linear-gradient(to bottom, $grey-n01 0%, $grey-n04 100%),
-          text-color: $grey-n10,
-          box-shadow: inset 0 -2px 0 0 $grey-n05
-        ),
-        active: (
-          bg-color: linear-gradient(to bottom, $grey-n04 0%, $grey-n01 100%),
-          text-color: $grey-n10,
-          box-shadow: inset 0 2px 0 0 $grey-n05
-        )
-      ));
-
-      text-shadow: 1px 1px 2px $white;
-    }
-  }
-  
-  // Demo Tag customization
-  .tag {
-    &.cool {
-      @include chassis-tag((
-        default: (
-          bg-color: $green
-        )
-      ));
-    }
-  }
-
-  .modal {
-    // These stay in Showroom
-    padding: 1.618em;
-    border-radius: $default-border-radius;
-
-    footer {
-      text-align: right;
-
-      .button {
-        margin-bottom: 0;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
+  padding-bottom: 3.618em;
 
   > header {
     padding: 1.46em 0 .90169942em;
@@ -207,6 +125,8 @@
           }
 
           .button {
+            
+            @import 'partials/custom-buttons';
 
             &.green {
               background: $green;
@@ -216,9 +136,6 @@
               }
               &:active {
                 background: darken($green, 2%);
-              }
-              &.disabled {
-                background: lighten(desaturate($green, 10%), 32%);
               }
             }
           }
@@ -267,6 +184,19 @@
             }
           }
         }
+        
+        &.tags {
+          // Demo Tag customization
+          .tag {
+            &.cool {
+              @include chassis-tag((
+                default: (
+                  bg-color: $green
+                )
+              ));
+            }
+          }
+        }
 
         &.modals {
           .open.button {
@@ -277,10 +207,6 @@
               margin-right: 0;
             }
           }
-        }
-
-        &.forms {
-
         }
       }
 
@@ -376,6 +302,24 @@
       @include above-viewport-width(huge) {
         &.above-max {
           @include show(inline);
+        }
+      }
+    }
+  }
+  
+  .modal {
+    // These stay in Showroom
+    padding: 1.618em;
+    border-radius: $default-border-radius;
+
+    footer {
+      text-align: right;
+
+      .button {
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-right: 0;
         }
       }
     }

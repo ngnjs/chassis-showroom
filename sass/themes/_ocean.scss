@@ -1,4 +1,8 @@
 // Ocean Dark Theme
+
+$red : rgb(191,97,106);
+$green : rgb(163,190,140);
+
 // :: Global -------------------------------------------------------------------
 
 $root-bg-color : rgb(43,48,59);
@@ -7,7 +11,7 @@ $text-color    : rgb(143,161,179);
 
 // :: Links --------------------------------------------------------------------
 
-$link-color          : rgb(163,190,140);
+$link-color          : $green;
 $disabled-link-color : rgb(79,81,102);
 
 
@@ -24,11 +28,7 @@ $h6-color         : rgb(239,241,245);
 // :: Buttons ------------------------------------------------------------------
 
 $default-button-text-color       : rgb(255,255,255);
-$default-button-bg-color         : rgb(191,97,106);
-
-$default-button-has-border       : false;
-$default-button-border-thickness : 0px;
-$default-button-border-color     : transparent;
+$default-button-bg-color         : $red;
 
 
 // :: Modal --------------------------------------------------------------------
