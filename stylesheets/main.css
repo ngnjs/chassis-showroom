@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/** @function chassis-get-z-index
+ * @param {string} $key
+ * Name of element from $CHASSIS_Z-INDEX_DEFAULTS map
+ * found in chassis-sass ./config/z-index
+ */
 /*
 
 Viewport Width-specific styles can be applied in 5 different ways:
@@ -155,6 +160,20 @@ Viewport Width-specific styles can be applied in 5 different ways:
   pointer-events: none; }
 
 /**
+ * @function get-optimal-line-dimensions
+ * Return optimized line-height and width based on font-size and type-scale-ratio
+ * @param {px} $font-size
+ * @param {int} $ratio
+ * Type scale ratio
+ */
+/**
+ * @function calculate-line-height
+ * Returns adjusted line-height for a particular font-size and viewport-width-range
+ * @param {px} $font-size
+ * @param {px} $upper-bound
+ * viewport-width-range upper bound
+ */
+/**
  * @mixin global-typography-rules
  * Generate default typography rules for standard elements
  * This mixin is used in the chassis-sass core package to establish typography
@@ -251,18 +270,19 @@ button {
   visibility: hidden !important;
   opacity: 0 !important; }
 
-.width-constraint, .showroom main {
+.width-constraint {
+  width: 100%;
   min-width: 320px !important;
   max-width: 1440px !important;
   margin: 0 auto;
   padding-left: 6.18vw;
   padding-right: 6.18vw; }
   @media screen and (max-width: 320px) {
-    .width-constraint, .showroom main {
+    .width-constraint {
       padding-left: 20px;
       padding-right: 20px; } }
   @media screen and (min-width: 1440px) {
-    .width-constraint, .showroom main {
+    .width-constraint {
       padding-left: 89px;
       padding-right: 89px; } }
 
@@ -274,32 +294,32 @@ button {
   line-height: 24px; }
   .chassis h1 {
     font-size: 1.6em;
-    line-height: 1.625em;
-    margin-bottom: 1.00431em; }
+    line-height: 1.41667em;
+    margin-bottom: 0.87555em; }
   .chassis h2 {
     font-size: 1.26667em;
-    line-height: 1.29167em;
-    margin-bottom: 1.00837em; }
+    line-height: 1.16667em;
+    margin-bottom: 0.91079em; }
   .chassis h3 {
     font-size: 1em;
     line-height: 1em;
     margin-bottom: 0.98885em; }
   .chassis h4 {
     font-size: 0.8em;
-    line-height: 0.79167em;
-    margin-bottom: 0.97855em; }
+    line-height: 0.875em;
+    margin-bottom: 1.08156em; }
   .chassis h5 {
     font-size: 0.8em;
-    line-height: 0.79167em;
-    margin-bottom: 0.97855em; }
+    line-height: 0.875em;
+    margin-bottom: 1.08156em; }
   .chassis h6 {
     font-size: 0.8em;
-    line-height: 0.79167em;
-    margin-bottom: 0.97855em; }
+    line-height: 0.875em;
+    margin-bottom: 1.08156em; }
   .chassis legend {
     font-size: 1.26667em;
-    line-height: 1.29167em;
-    margin-bottom: 1.00837em; }
+    line-height: 1.16667em;
+    margin-bottom: 0.91079em; }
   .chassis section,
   .chassis nav,
   .chassis form {
@@ -321,32 +341,32 @@ button {
   @media screen and (min-width: 512px) and (max-width: 767px) {
     .chassis {
       font-size: 16px;
-      line-height: 26px; }
+      line-height: 27px; }
       .chassis h1 {
         font-size: 1.625em;
-        line-height: 1.61538em; }
+        line-height: 1.40741em; }
       .chassis h2 {
         font-size: 1.25em;
-        line-height: 1.23077em; }
+        line-height: 1.14815em; }
       .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
       .chassis h4 {
         font-size: 0.8125em;
-        line-height: 0.80769em; }
+        line-height: 0.88889em; }
       .chassis h5 {
         font-size: 0.8125em;
-        line-height: 0.80769em; }
+        line-height: 0.88889em; }
       .chassis h6 {
         font-size: 0.8125em;
-        line-height: 0.80769em; }
+        line-height: 0.88889em; }
       .chassis legend {
         font-size: 1.25em;
-        line-height: 1.23077em; }
+        line-height: 1.14815em; }
       .chassis section,
       .chassis nav,
       .chassis form {
-        margin-bottom: 2.62931em; }
+        margin-bottom: 2.73043em; }
       .chassis nav section,
       .chassis section nav,
       .chassis nav nav,
@@ -358,43 +378,43 @@ button {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.625em; }
+        margin-bottom: 1.6875em; }
       .chassis p {
         margin-bottom: 1em; }
       .chassis input,
       .chassis textarea {
         font-size: 16px; }
       .chassis textarea {
-        line-height: 26px; } }
+        line-height: 27px; } }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .chassis {
       font-size: 17px;
-      line-height: 28px; }
+      line-height: 29px; }
       .chassis h1 {
         font-size: 1.64706em;
-        line-height: 1.60714em; }
+        line-height: 1.41379em; }
       .chassis h2 {
         font-size: 1.29412em;
-        line-height: 1.28571em; }
+        line-height: 1.17241em; }
       .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
       .chassis h4 {
         font-size: 0.76471em;
-        line-height: 0.75em; }
+        line-height: 0.89655em; }
       .chassis h5 {
         font-size: 0.76471em;
-        line-height: 0.75em; }
+        line-height: 0.89655em; }
       .chassis h6 {
         font-size: 0.76471em;
-        line-height: 0.75em; }
+        line-height: 0.89655em; }
       .chassis legend {
         font-size: 1.29412em;
-        line-height: 1.28571em; }
+        line-height: 1.17241em; }
       .chassis section,
       .chassis nav,
       .chassis form {
-        margin-bottom: 2.665em; }
+        margin-bottom: 2.76018em; }
       .chassis nav section,
       .chassis section nav,
       .chassis nav nav,
@@ -406,43 +426,43 @@ button {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.64706em; }
+        margin-bottom: 1.70588em; }
       .chassis p {
         margin-bottom: 1em; }
       .chassis input,
       .chassis textarea {
         font-size: 17px; }
       .chassis textarea {
-        line-height: 28px; } }
+        line-height: 29px; } }
   @media screen and (min-width: 1024px) and (max-width: 1199px) {
     .chassis {
       font-size: 18px;
-      line-height: 29px; }
+      line-height: 31px; }
       .chassis h1 {
         font-size: 1.61111em;
-        line-height: 1.62069em; }
+        line-height: 1.3871em; }
       .chassis h2 {
         font-size: 1.27778em;
-        line-height: 1.27586em; }
+        line-height: 1.16129em; }
       .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
       .chassis h4 {
         font-size: 0.77778em;
-        line-height: 0.7931em; }
+        line-height: 0.90323em; }
       .chassis h5 {
         font-size: 0.77778em;
-        line-height: 0.7931em; }
+        line-height: 0.90323em; }
       .chassis h6 {
         font-size: 0.77778em;
-        line-height: 0.7931em; }
+        line-height: 0.90323em; }
       .chassis legend {
         font-size: 1.27778em;
-        line-height: 1.27586em; }
+        line-height: 1.16129em; }
       .chassis section,
       .chassis nav,
       .chassis form {
-        margin-bottom: 2.60683em; }
+        margin-bottom: 2.78661em; }
       .chassis nav section,
       .chassis section nav,
       .chassis nav nav,
@@ -454,43 +474,43 @@ button {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.61111em; }
+        margin-bottom: 1.72222em; }
       .chassis p {
         margin-bottom: 1em; }
       .chassis input,
       .chassis textarea {
         font-size: 18px; }
       .chassis textarea {
-        line-height: 29px; } }
+        line-height: 31px; } }
   @media screen and (min-width: 1200px) {
     .chassis {
       font-size: 19px;
-      line-height: 31px; }
+      line-height: 34px; }
       .chassis h1 {
         font-size: 1.63158em;
-        line-height: 1.6129em; }
+        line-height: 1.35294em; }
       .chassis h2 {
         font-size: 1.26316em;
-        line-height: 1.25806em; }
+        line-height: 1.11765em; }
       .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
       .chassis h4 {
         font-size: 0.78947em;
-        line-height: 0.77419em; }
+        line-height: 0.91176em; }
       .chassis h5 {
         font-size: 0.78947em;
-        line-height: 0.77419em; }
+        line-height: 0.91176em; }
       .chassis h6 {
         font-size: 0.78947em;
-        line-height: 0.77419em; }
+        line-height: 0.91176em; }
       .chassis legend {
         font-size: 1.26316em;
-        line-height: 1.25806em; }
+        line-height: 1.11765em; }
       .chassis section,
       .chassis nav,
       .chassis form {
-        margin-bottom: 2.63995em; }
+        margin-bottom: 2.89543em; }
       .chassis nav section,
       .chassis section nav,
       .chassis nav nav,
@@ -502,14 +522,14 @@ button {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.63158em; }
+        margin-bottom: 1.78947em; }
       .chassis p {
         margin-bottom: 1em; }
       .chassis input,
       .chassis textarea {
         font-size: 19px; }
       .chassis textarea {
-        line-height: 31px; } }
+        line-height: 34px; } }
 
 /**
  * @mixin chassis-default-rule
@@ -623,9 +643,9 @@ html {
 .chassis a.button,
 .chassis button, .showroom main .content > section.buttons .custom-button {
   display: inline-block;
-  margin: 0 0.80902em 1.61803em 0;
-  padding: 0 0.80902em;
-  line-height: 2.61803em;
+  margin: 0 0.7888em 1.57761em 0;
+  padding: 0 0.7888em;
+  line-height: 2.55263em;
   background: #0098e6;
   border-radius: 0.24063em;
   border: none;
@@ -663,14 +683,14 @@ html {
   text-transform: none; }
 
 .chassis form .field {
-  margin: 0 0 1.61803em 0; }
+  margin: 0 0 1.57761em 0; }
   .chassis form .field .input {
     display: flex; }
     .chassis form .field .input input:not([type='checkbox']):not([type='radio']),
     .chassis form .field .input textarea {
-      margin: 0 0.80902em 1.61803em 0;
-      padding: 0 0.80902em;
-      line-height: 2.61803em;
+      margin: 0 0.7888em 1.57761em 0;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
       flex: 1 1 auto;
       width: 0;
       max-width: 100%;
@@ -691,8 +711,8 @@ html {
     .chassis form .field .input *:last-child {
       margin-right: 0; }
     .chassis form .field .input .browser {
-      margin: 0 0.80902em 1.61803em 0;
-      line-height: 2.61803em;
+      margin: 0 0.7888em 1.57761em 0;
+      line-height: 2.55263em;
       display: flex;
       flex: 1 1 auto;
       margin-bottom: 0; }
@@ -720,18 +740,18 @@ html {
           background: #d5d6d8; }
 
 .chassis form .group {
-  margin: 0 0 1.61803em 0; }
+  margin: 0 0 1.57761em 0; }
   .chassis form .group .field {
     margin-bottom: 0; }
 
 .chassis form .row {
   display: flex;
   flex-direction: column;
-  margin: 0 0 1.61803em 0; }
+  margin: 0 0 1.57761em 0; }
   .chassis form .row > *:last-child {
     margin-bottom: 0; }
   .chassis form .row .group {
-    margin: 0 0 1.61803em 0; }
+    margin: 0 0 1.57761em 0; }
     .chassis form .row .group:last-child {
       margin-bottom: 0; }
     .chassis form .row .group .field {
@@ -750,7 +770,7 @@ html {
         .chassis form .row .group:last-child {
           margin-right: 0; }
       .chassis form .row .group {
-        padding: 0.5em 1em;
+        padding: 0.48751em 1em;
         padding: 0; }
         .chassis form .row .group .field {
           margin: 0; } }
@@ -776,14 +796,14 @@ html {
     box-shadow: inset 0 0 0 1px #0098e6; }
 
 .chassis input:not([type='checkbox']):not([type='radio']) {
-  margin: 0 0.80902em 1.61803em 0;
-  padding: 0 0.80902em;
-  line-height: 2.61803em; }
+  margin: 0 0.7888em 1.57761em 0;
+  padding: 0 0.7888em;
+  line-height: 2.55263em; }
 
 .chassis textarea {
-  margin: 0 0.80902em 1.61803em 0;
-  padding: 0.5em 0.80902em;
-  line-height: 1.61803em;
+  margin: 0 0.7888em 1.57761em 0;
+  padding: 0.48751em 0.7888em;
+  line-height: 1.57761em;
   overflow: auto;
   vertical-align: top;
   resize: none; }
@@ -847,8 +867,8 @@ html {
  */
 .chassis .tag {
   display: inline-block;
-  padding: 0 0.80902em;
-  line-height: 2.61803em;
+  padding: 0 0.7888em;
+  line-height: 2.55263em;
   background: #a9aaae;
   border-radius: 0.24063em;
   border: none;
@@ -861,23 +881,23 @@ html {
   @media screen and (max-width: 511px) {
     .chassis .tag {
       font-size: 12px;
-      line-height: 19px; } }
+      line-height: 21px; } }
   @media screen and (min-width: 512px) and (max-width: 767px) {
     .chassis .tag {
       font-size: 13px;
-      line-height: 21px; } }
+      line-height: 24px; } }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .chassis .tag {
       font-size: 13px;
-      line-height: 21px; } }
+      line-height: 26px; } }
   @media screen and (min-width: 1024px) and (max-width: 1199px) {
     .chassis .tag {
       font-size: 14px;
-      line-height: 23px; } }
+      line-height: 28px; } }
   @media screen and (min-width: 1200px) {
     .chassis .tag {
       font-size: 15px;
-      line-height: 24px; } }
+      line-height: 31px; } }
 
 /**
  * @mixin tiles
@@ -897,7 +917,7 @@ html {
     @media screen and (min-width: 768px) {
       .showroom > header {
         padding-top: 2.36em; }
-        .showroom > header .width-constraint, .showroom > header main {
+        .showroom > header .width-constraint {
           display: flex; } }
     .showroom > header h1 {
       flex: 1;
@@ -906,23 +926,23 @@ html {
       @media screen and (max-width: 511px) {
         .showroom > header h1 {
           font-size: 19px;
-          line-height: 31px; } }
+          line-height: 28px; } }
       @media screen and (min-width: 512px) and (max-width: 767px) {
         .showroom > header h1 {
           font-size: 20px;
-          line-height: 32px; } }
+          line-height: 31px; } }
       @media screen and (min-width: 768px) and (max-width: 1023px) {
         .showroom > header h1 {
           font-size: 22px;
-          line-height: 36px; } }
+          line-height: 34px; } }
       @media screen and (min-width: 1024px) and (max-width: 1199px) {
         .showroom > header h1 {
           font-size: 23px;
-          line-height: 37px; } }
+          line-height: 36px; } }
       @media screen and (min-width: 1200px) {
         .showroom > header h1 {
           font-size: 24px;
-          line-height: 39px; } }
+          line-height: 38px; } }
     .showroom > header .links {
       display: flex;
       align-items: center; }
@@ -931,7 +951,21 @@ html {
         .showroom > header .links a:first-child {
           margin-left: 0; }
   .showroom main {
+    width: 100%;
+    min-width: 320px !important;
+    max-width: 1440px !important;
+    margin: 0 auto;
+    padding-left: 6.18vw;
+    padding-right: 6.18vw;
     padding-top: 2em; }
+    @media screen and (max-width: 320px) {
+      .showroom main {
+        padding-left: 20px;
+        padding-right: 20px; } }
+    @media screen and (min-width: 1440px) {
+      .showroom main {
+        padding-left: 89px;
+        padding-right: 89px; } }
     @media screen and (min-width: 768px) {
       .showroom main {
         display: flex;
@@ -951,11 +985,11 @@ html {
           visibility: visible;
           opacity: 1;
           flex: 1 0 25%;
-          margin: 0 0 1.61803em 0; } }
+          margin: 0 0 1.57761em 0; } }
       .showroom main .sidebar nav a {
         display: block;
-        padding: 0 0.80902em;
-        line-height: 2.61803em; }
+        padding: 0 0.7888em;
+        line-height: 2.55263em; }
         .showroom main .sidebar nav a:not(:first-child) {
           box-shadow: 0 -1px 0 0 #dadbdd; }
         .showroom main .sidebar nav a:hover {
@@ -974,9 +1008,9 @@ html {
       box-shadow: inset 0 -1px 0 0 #d1d2d4; }
     .showroom main .content > section.buttons .button.outlined {
       display: inline-block;
-      margin: 0 0.80902em 1.61803em 0;
-      padding: 0 0.80902em;
-      line-height: 2.61803em;
+      margin: 0 0.7888em 1.57761em 0;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
       background: white;
       border-radius: 0.24063em;
       border: none;
@@ -1024,9 +1058,9 @@ html {
         outline: none; }
     .showroom main .content > section.buttons .button.with-shadow {
       display: inline-block;
-      margin: 0 0.80902em 1.61803em 0;
-      padding: 0 0.80902em;
-      line-height: 2.61803em;
+      margin: 0 0.7888em 1.57761em 0;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
       background: #0098e6;
       border-radius: 0.24063em;
       border: none;
@@ -1076,9 +1110,9 @@ html {
         outline: none; }
     .showroom main .content > section.buttons .button.beveled {
       display: inline-block;
-      margin: 0 0.80902em 1.61803em 0;
-      padding: 0 0.80902em;
-      line-height: 2.61803em;
+      margin: 0 0.7888em 1.57761em 0;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
       background: linear-gradient(to bottom, #ededed 0%, #d1d2d4 100%);
       border-radius: 0.24063em;
       border: none;
@@ -1134,7 +1168,7 @@ html {
       .showroom main .content > section.buttons .button.green:active {
         background: #63b211; }
     .showroom main .content > section.flex-tiles .tiles {
-      margin: 0 0 1.61803em 0;
+      margin: 0 0 1.57761em 0;
       counter-reset: CHASSIS_FLEX_TILE_COUNTER;
       display: block;
       padding: 1em 1em 0;
@@ -1253,8 +1287,8 @@ html {
           display: block; }
     .showroom main .content > section.tags .tag.cool {
       display: inline-block;
-      padding: 0 0.80902em;
-      line-height: 2.61803em;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
       background: #68bb12;
       border-radius: 0.24063em;
       border: none;
@@ -1271,23 +1305,23 @@ html {
       @media screen and (max-width: 511px) {
         .showroom main .content > section.tags .tag.cool {
           font-size: 12px;
-          line-height: 19px; } }
+          line-height: 21px; } }
       @media screen and (min-width: 512px) and (max-width: 767px) {
         .showroom main .content > section.tags .tag.cool {
           font-size: 13px;
-          line-height: 21px; } }
+          line-height: 24px; } }
       @media screen and (min-width: 768px) and (max-width: 1023px) {
         .showroom main .content > section.tags .tag.cool {
           font-size: 13px;
-          line-height: 21px; } }
+          line-height: 26px; } }
       @media screen and (min-width: 1024px) and (max-width: 1199px) {
         .showroom main .content > section.tags .tag.cool {
           font-size: 14px;
-          line-height: 23px; } }
+          line-height: 28px; } }
       @media screen and (min-width: 1200px) {
         .showroom main .content > section.tags .tag.cool {
           font-size: 15px;
-          line-height: 24px; } }
+          line-height: 31px; } }
     .showroom main .content > section.modals .open.button {
       margin-bottom: 0; }
       @media screen and (max-width: 511px) {
@@ -1295,8 +1329,8 @@ html {
           display: block;
           margin-right: 0; } }
     .showroom main .content pre.code {
-      margin: 0 0 1.61803em 0;
-      padding: 0.5em 1em;
+      margin: 0 0 1.57761em 0;
+      padding: 0.48751em 1em;
       background: #fafafa;
       box-shadow: 0 0 0 1px #d1d2d4;
       border-radius: 0 0.24063em 0.24063em 0;

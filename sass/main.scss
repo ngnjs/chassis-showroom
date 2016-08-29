@@ -1,6 +1,6 @@
 @import 'chassis';
 
-// @import 'themes/ocean';
+// @import 'themes/ocean/import';
 @import 'detailer';
 
 // Import Detailer UI Components
@@ -125,7 +125,7 @@
           }
 
           .button {
-            
+
             @import 'partials/custom-buttons';
 
             &.green {
@@ -184,7 +184,7 @@
             }
           }
         }
-        
+
         &.tags {
           // Demo Tag customization
           .tag {
@@ -306,7 +306,7 @@
       }
     }
   }
-  
+
   .modal {
     // These stay in Showroom
     padding: 1.618em;
