@@ -1,6 +1,30 @@
 @import 'chassis';
 
 // @import 'themes/ocean/import';
+
+@font-face {
+  font-family: Malva;
+  src: local("Malva Light"),
+       url('/resources/fonts/Malva-Light.otf');
+  font-weight: $regular;
+}
+
+@font-face {
+  font-family: Malva;
+  src: local("Malva Regular"),
+       url('/resources/fonts/Malva-Regular.otf');
+  font-weight: $semibold;
+}
+
+@font-face {
+  font-family: Malva;
+  src: local("Malva Bold"),
+       url('/resources/fonts/Malva-Bold.otf');
+  font-weight: $bold;
+}
+
+$font-family: Malva;
+
 @import 'detailer';
 
 // Import Detailer UI Components
@@ -257,7 +281,7 @@
     text-align: center;
 
     .label {
-      font-weight: bold;
+      font-weight: $bold;
     }
 
     .range {

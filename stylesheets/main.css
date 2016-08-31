@@ -531,6 +531,21 @@ button {
       .chassis textarea {
         line-height: 34px; } }
 
+@font-face {
+  font-family: Malva;
+  src: local("Malva Light"), url("/resources/fonts/Malva-Light.otf");
+  font-weight: 400; }
+
+@font-face {
+  font-family: Malva;
+  src: local("Malva Regular"), url("/resources/fonts/Malva-Regular.otf");
+  font-weight: 500; }
+
+@font-face {
+  font-family: Malva;
+  src: local("Malva Bold"), url("/resources/fonts/Malva-Bold.otf");
+  font-weight: 700; }
+
 /**
  * @mixin chassis-default-rule
  * Apply CSS property value if it is specified in passed-in component defs map
@@ -577,7 +592,7 @@ html {
   background: white; }
 
 .chassis {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Malva;
   font-weight: 400;
   font-style: normal;
   font-style: normal;
@@ -598,19 +613,19 @@ html {
       text-decoration: initial;
       color: #bcbdc1; }
   .chassis h1 {
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
   .chassis h2 {
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
   .chassis h3 {
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
@@ -676,7 +691,7 @@ html {
   margin-bottom: 0; }
 
 .chassis form legend {
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-variant: normal;
   text-decoration: none;
@@ -777,12 +792,11 @@ html {
 
 .chassis label {
   display: block;
-  cursor: pointer;
-  font-weight: 500; }
+  cursor: pointer; }
 
 .chassis input:not([type='checkbox']):not([type='radio']),
 .chassis textarea {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Malva;
   font-weight: 400;
   color: #444444;
   border: 0;
@@ -813,7 +827,7 @@ html {
   display: inline-block; }
 
 .chassis button {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Malva;
   font-weight: 400; }
 
 @media screen and (max-width: 511px) {
@@ -907,7 +921,7 @@ html {
  * Amount of space between tiles
  */
 .bold {
-  font-weight: 600 !important; }
+  font-weight: 700 !important; }
 
 .showroom {
   padding-bottom: 3.618em; }
@@ -1017,7 +1031,7 @@ html {
       outline: none;
       box-shadow: inset 0 0 0 2px #bcbdc1;
       vertical-align: middle;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: Malva;
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
@@ -1028,7 +1042,7 @@ html {
       cursor: pointer; }
       .showroom main .content > section.buttons .button.outlined:visited {
         box-shadow: inset 0 0 0 2px #bcbdc1;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1036,7 +1050,7 @@ html {
         text-transform: none; }
       .showroom main .content > section.buttons .button.outlined:hover {
         background: #e2e3e5;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1045,7 +1059,7 @@ html {
         color: #444444; }
       .showroom main .content > section.buttons .button.outlined:active {
         background: #dadbdd;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1067,7 +1081,7 @@ html {
       outline: none;
       box-shadow: 0 3px 3px 0 #a9aaae;
       vertical-align: middle;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: Malva;
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
@@ -1079,7 +1093,7 @@ html {
       .showroom main .content > section.buttons .button.with-shadow:visited {
         background: #0098e6;
         box-shadow: 0 3px 3px 0 #a9aaae;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1088,7 +1102,7 @@ html {
         color: white; }
       .showroom main .content > section.buttons .button.with-shadow:hover {
         background: #00a2f5;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1097,7 +1111,7 @@ html {
         color: white; }
       .showroom main .content > section.buttons .button.with-shadow:active {
         background: #0091dc;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1119,7 +1133,7 @@ html {
       outline: none;
       box-shadow: inset 0 -2px 0 0 #bcbdc1;
       vertical-align: middle;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: Malva;
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
@@ -1131,7 +1145,7 @@ html {
       text-shadow: 1px 1px 2px white; }
       .showroom main .content > section.buttons .button.beveled:visited {
         box-shadow: inset 0 -2px 0 0 #bcbdc1;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1140,7 +1154,7 @@ html {
       .showroom main .content > section.buttons .button.beveled:hover {
         background: linear-gradient(to bottom, #e2e3e5 0%, #bcbdc1 100%);
         box-shadow: inset 0 -2px 0 0 #a9aaae;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1150,7 +1164,7 @@ html {
       .showroom main .content > section.buttons .button.beveled:active {
         background: linear-gradient(to bottom, #bcbdc1 0%, #e2e3e5 100%);
         box-shadow: inset 0 2px 0 0 #a9aaae;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Malva;
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1294,7 +1308,7 @@ html {
       border: none;
       outline: none;
       vertical-align: middle;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: Malva;
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
@@ -1357,7 +1371,7 @@ html {
     box-shadow: inset 0 1px 0 0 #a9aaae;
     text-align: center; }
     .showroom > footer .label {
-      font-weight: bold; }
+      font-weight: 700; }
     .showroom > footer .range {
       display: none;
       visibility: hidden;
