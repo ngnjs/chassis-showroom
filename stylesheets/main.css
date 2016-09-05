@@ -146,7 +146,7 @@ Viewport Width-specific styles can be applied in 5 different ways:
  */
 .chassis .button,
 .chassis a.button,
-.chassis button, .showroom main .content > section.buttons .custom-button, .showroom main .content > section.buttons .button.outlined, .showroom main .content > section.buttons .button.with-shadow, .showroom main .content > section.buttons .button.beveled {
+.chassis button, .showroom .content > section.buttons .custom-button, .showroom .content > section.buttons .button.outlined, .showroom .content > section.buttons .button.with-shadow, .showroom .content > section.buttons .button.beveled {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -156,7 +156,7 @@ Viewport Width-specific styles can be applied in 5 different ways:
   user-select: none; }
 
 .chassis a.disabled, .chassis .disabled.button,
-.chassis button.disabled, .showroom main .content > section.buttons .disabled.custom-button, .showroom main .content > section.buttons .button.outlined.disabled, .showroom main .content > section.buttons .button.with-shadow.disabled, .showroom main .content > section.buttons .button.beveled.disabled {
+.chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button, .showroom .content > section.buttons .button.outlined.disabled, .showroom .content > section.buttons .button.with-shadow.disabled, .showroom .content > section.buttons .button.beveled.disabled {
   pointer-events: none; }
 
 /**
@@ -207,6 +207,9 @@ Viewport Width-specific styles can be applied in 5 different ways:
  * If element displays inline but can contain multiple lines of text within 
  * itself, like a textarea or contenteditable, set this to true. This will 
  * ensure correct line-height.
+ * @param {bool} $add-height-rule
+ * Add height rule that matches line-height. Useful in browsers which do not
+ * resize containers in respect to line-height
  */
 /**
  * @mixin block-layout-rules
@@ -234,30 +237,35 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
-
-q, blockquote {
+q,
+blockquote {
   quotes: none; }
-
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none; }
+  q:before, q:after,
+  blockquote:before,
+  blockquote:after {
+    content: "";
+    content: none; }
 
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav,
-section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
   display: block; }
 
 input,
@@ -656,7 +664,7 @@ html {
  */
 .chassis .button,
 .chassis a.button,
-.chassis button, .showroom main .content > section.buttons .custom-button {
+.chassis button, .showroom .content > section.buttons .custom-button {
   display: inline-block;
   margin: 0 0.7888em 1.57761em 0;
   padding: 0 0.7888em;
@@ -672,18 +680,18 @@ html {
   color: white;
   cursor: pointer; }
   .chassis .button:visited,
-  .chassis button:visited, .showroom main .content > section.buttons .custom-button:visited { }
+  .chassis button:visited, .showroom .content > section.buttons .custom-button:visited { }
   .chassis .button:hover,
-  .chassis button:hover, .showroom main .content > section.buttons .custom-button:hover {
+  .chassis button:hover, .showroom .content > section.buttons .custom-button:hover {
     background: #00a2f5; }
   .chassis .button:active,
-  .chassis button:active, .showroom main .content > section.buttons .custom-button:active {
+  .chassis button:active, .showroom .content > section.buttons .custom-button:active {
     background: #0091dc; }
   .chassis .disabled.button,
-  .chassis button.disabled, .showroom main .content > section.buttons .disabled.custom-button {
+  .chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button {
     opacity: 0.382; }
   .chassis .button:focus,
-  .chassis button:focus, .showroom main .content > section.buttons .custom-button:focus {
+  .chassis button:focus, .showroom .content > section.buttons .custom-button:focus {
     outline: none; }
 
 .chassis form > *:last-child,
@@ -703,9 +711,6 @@ html {
     display: flex; }
     .chassis form .field .input input:not([type='checkbox']):not([type='radio']),
     .chassis form .field .input textarea {
-      margin: 0 0.7888em 1.57761em 0;
-      padding: 0 0.7888em;
-      line-height: 2.55263em;
       flex: 1 1 auto;
       width: 0;
       max-width: 100%;
@@ -873,6 +878,32 @@ html {
   background-blend-mode: normal;
   z-index: 997; }
 
+.chassis table {
+  table-layout: fixed;
+  margin: 0 0 1.57761em 0;
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0; }
+  .chassis table caption,
+  .chassis table th,
+  .chassis table td {
+    padding: 0.48751em 0.7888em;
+    line-height: 1.57761em;
+    overflow: hidden;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: left;
+    text-overflow: ellipsis; }
+  .chassis table thead {
+    border-bottom: 3px solid #dadbdd; }
+  .chassis table tfoot {
+    border-top: 3px solid #dadbdd; }
+  .chassis table tbody tr td {
+    border-bottom: 1px solid #dadbdd; }
+  .chassis table tbody tr:last-child td {
+    border-bottom: 0; }
+
 /**
  * @mixin chassis-tag
  * @param {map} $settings
@@ -964,402 +995,397 @@ html {
         margin-left: 1em; }
         .showroom > header .links a:first-child {
           margin-left: 0; }
-  .showroom main {
-    width: 100%;
-    min-width: 320px !important;
-    max-width: 1440px !important;
-    margin: 0 auto;
-    padding-left: 6.18vw;
-    padding-right: 6.18vw;
-    padding-top: 2em; }
-    @media screen and (max-width: 320px) {
-      .showroom main {
-        padding-left: 20px;
-        padding-right: 20px; } }
-    @media screen and (min-width: 1440px) {
-      .showroom main {
-        padding-left: 89px;
-        padding-right: 89px; } }
+  .showroom .sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    margin: 0; }
     @media screen and (min-width: 768px) {
-      .showroom main {
-        display: flex;
-        align-items: flex-start;
-        padding-top: 3.82em; } }
-    .showroom main .sidebar {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      display: none;
-      visibility: hidden;
-      opacity: 0;
-      margin: 0; }
-      @media screen and (min-width: 768px) {
-        .showroom main .sidebar {
-          display: block;
-          visibility: visible;
-          opacity: 1;
-          flex: 1 0 25%;
-          margin: 0 0 1.57761em 0; } }
-      .showroom main .sidebar nav a {
+      .showroom .sidebar {
         display: block;
-        padding: 0 0.7888em;
-        line-height: 2.55263em; }
-        .showroom main .sidebar nav a:not(:first-child) {
-          box-shadow: 0 -1px 0 0 #dadbdd; }
-        .showroom main .sidebar nav a:hover {
-          box-shadow: none;
-          background: #00a2f5;
-          color: white;
-          text-decoration: none; }
-          .showroom main .sidebar nav a:hover + a {
-            box-shadow: none; }
-        .showroom main .sidebar nav a:active {
-          background: #0091dc; }
-    @media screen and (min-width: 768px) {
-      .showroom main .content {
-        padding: 0 0 0 3.82vw; } }
-    .showroom main .content > section h1 {
-      box-shadow: inset 0 -1px 0 0 #d1d2d4; }
-    .showroom main .content > section.buttons .button.outlined {
-      display: inline-block;
-      margin: 0 0.7888em 1.57761em 0;
-      padding: 0 0.7888em;
-      line-height: 2.55263em;
-      background: white;
-      border-radius: 0.24063em;
-      border: none;
-      outline: none;
-      box-shadow: inset 0 0 0 2px #bcbdc1;
-      vertical-align: middle;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-align: center;
-      text-decoration: none;
-      text-transform: none;
-      color: #77787c;
-      cursor: pointer; }
-      .showroom main .content > section.buttons .button.outlined:visited {
-        box-shadow: inset 0 0 0 2px #bcbdc1;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none; }
-      .showroom main .content > section.buttons .button.outlined:hover {
-        background: #e2e3e5;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none;
-        color: #444444; }
-      .showroom main .content > section.buttons .button.outlined:active {
-        background: #dadbdd;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none;
-        color: #444444; }
-      .showroom main .content > section.buttons .button.outlined.disabled {
-        opacity: 0.382; }
-      .showroom main .content > section.buttons .button.outlined:focus {
-        outline: none; }
-    .showroom main .content > section.buttons .button.with-shadow {
-      display: inline-block;
-      margin: 0 0.7888em 1.57761em 0;
-      padding: 0 0.7888em;
-      line-height: 2.55263em;
-      background: #0098e6;
-      border-radius: 0.24063em;
-      border: none;
-      outline: none;
-      box-shadow: 0 3px 3px 0 #a9aaae;
-      vertical-align: middle;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-align: center;
-      text-decoration: none;
-      text-transform: none;
-      color: white;
-      cursor: pointer; }
-      .showroom main .content > section.buttons .button.with-shadow:visited {
-        background: #0098e6;
-        box-shadow: 0 3px 3px 0 #a9aaae;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none;
-        color: white; }
-      .showroom main .content > section.buttons .button.with-shadow:hover {
-        background: #00a2f5;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none;
-        color: white; }
-      .showroom main .content > section.buttons .button.with-shadow:active {
-        background: #0091dc;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none;
-        color: white; }
-      .showroom main .content > section.buttons .button.with-shadow.disabled {
-        opacity: 0.382; }
-      .showroom main .content > section.buttons .button.with-shadow:focus {
-        outline: none; }
-    .showroom main .content > section.buttons .button.beveled {
-      display: inline-block;
-      margin: 0 0.7888em 1.57761em 0;
-      padding: 0 0.7888em;
-      line-height: 2.55263em;
-      background: linear-gradient(to bottom, #ededed 0%, #d1d2d4 100%);
-      border-radius: 0.24063em;
-      border: none;
-      outline: none;
-      box-shadow: inset 0 -2px 0 0 #bcbdc1;
-      vertical-align: middle;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-align: center;
-      text-decoration: none;
-      text-transform: none;
-      color: #4c4d4f;
-      cursor: pointer;
-      text-shadow: 1px 1px 2px white; }
-      .showroom main .content > section.buttons .button.beveled:visited {
-        box-shadow: inset 0 -2px 0 0 #bcbdc1;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none; }
-      .showroom main .content > section.buttons .button.beveled:hover {
-        background: linear-gradient(to bottom, #e2e3e5 0%, #bcbdc1 100%);
-        box-shadow: inset 0 -2px 0 0 #a9aaae;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none;
-        color: #2c2d30; }
-      .showroom main .content > section.buttons .button.beveled:active {
-        background: linear-gradient(to bottom, #bcbdc1 0%, #e2e3e5 100%);
-        box-shadow: inset 0 2px 0 0 #a9aaae;
-        font-family: Malva;
-        font-weight: 400;
-        font-style: normal;
-        font-variant: normal;
-        text-decoration: none;
-        text-transform: none;
-        color: #2c2d30; }
-      .showroom main .content > section.buttons .button.beveled.disabled {
-        opacity: 0.382; }
-      .showroom main .content > section.buttons .button.beveled:focus {
-        outline: none; }
-    .showroom main .content > section.buttons .button.green {
-      background: #68bb12; }
-      .showroom main .content > section.buttons .button.green:hover {
-        background: #6dc413; }
-      .showroom main .content > section.buttons .button.green:active {
-        background: #63b211; }
-    .showroom main .content > section.flex-tiles .tiles {
-      margin: 0 0 1.57761em 0;
-      counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+        visibility: visible;
+        opacity: 1;
+        flex: 1 0 25%;
+        margin: 0 0 1.57761em 0; } }
+    .showroom .sidebar nav a {
       display: block;
-      padding: 1em 1em 0;
-      border: 1px solid #d1d2d4; }
-      .showroom main .content > section.flex-tiles .tiles > * {
-        counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-      @media screen and (min-width: 512px) {
-        .showroom main .content > section.flex-tiles .tiles {
-          counter-reset: CHASSIS_FLEX_TILE_COUNTER;
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: row; }
-          .showroom main .content > section.flex-tiles .tiles > * {
-            counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-          .showroom main .content > section.flex-tiles .tiles > * {
-            overflow: hidden;
-            flex: 0 0 50%;
-            max-width: 50%;
-            padding: 0 0.5em 1em;
-            background-clip: content-box !important; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
-              padding-right: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
-              padding-left: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
-              padding-right: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n) {
-              padding-right: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom main .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
-              padding-left: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:only-child, .showroom main .content > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom main .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
-              padding-left: 0.5em;
-              margin-left: auto;
-              margin-right: auto; } }
-      @media screen and (min-width: 768px) {
-        .showroom main .content > section.flex-tiles .tiles {
-          counter-reset: CHASSIS_FLEX_TILE_COUNTER;
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: row; }
-          .showroom main .content > section.flex-tiles .tiles > * {
-            counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-          .showroom main .content > section.flex-tiles .tiles > * {
-            overflow: hidden;
-            flex: 0 0 33.33333%;
-            max-width: 33.33333%;
-            padding: 0 0.5em 1em;
-            background-clip: content-box !important; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
-              padding-right: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
-              padding-left: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
-              padding-right: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
-              padding-left: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
-              padding-right: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(3n) {
-              padding-right: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom main .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
-              padding-left: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:only-child, .showroom main .content > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom main .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
-              padding-left: 0.5em;
-              margin-left: auto;
-              margin-right: auto; } }
-      @media screen and (min-width: 1200px) {
-        .showroom main .content > section.flex-tiles .tiles {
-          counter-reset: CHASSIS_FLEX_TILE_COUNTER;
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: row; }
-          .showroom main .content > section.flex-tiles .tiles > * {
-            counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-          .showroom main .content > section.flex-tiles .tiles > * {
-            overflow: hidden;
-            flex: 0 0 25%;
-            max-width: 25%;
-            padding: 0 0.5em 1em;
-            background-clip: content-box !important; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
-              padding-right: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
-              padding-left: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
-              padding-right: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
-              padding-left: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n):last-child {
-              padding-right: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n + 1) {
-              padding-left: 0.5em; }
-            .showroom main .content > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
-              padding-right: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(4n) {
-              padding-right: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom main .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
-              padding-left: 0; }
-            .showroom main .content > section.flex-tiles .tiles > *:only-child, .showroom main .content > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom main .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
-              padding-left: 0.5em;
-              margin-left: auto;
-              margin-right: auto; } }
-      .showroom main .content > section.flex-tiles .tiles .tile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 3.82em;
-        margin-bottom: 1em;
-        background: #ededed; }
-        @media screen and (min-width: 512px) {
-          .showroom main .content > section.flex-tiles .tiles .tile {
-            height: 6.18em;
-            margin-bottom: 0; } }
-        .showroom main .content > section.flex-tiles .tiles .tile:before {
-          content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
-          display: block; }
-    .showroom main .content > section.tags .tag.cool {
-      display: inline-block;
       padding: 0 0.7888em;
-      line-height: 2.55263em;
-      background: #68bb12;
-      border-radius: 0.24063em;
-      border: none;
-      outline: none;
-      vertical-align: middle;
+      line-height: 2.55263em; }
+      .showroom .sidebar nav a:not(:first-child) {
+        box-shadow: 0 -1px 0 0 #dadbdd; }
+      .showroom .sidebar nav a:hover {
+        box-shadow: none;
+        background: #00a2f5;
+        color: white;
+        text-decoration: none; }
+        .showroom .sidebar nav a:hover + a {
+          box-shadow: none; }
+      .showroom .sidebar nav a:active {
+        background: #0091dc; }
+  @media screen and (min-width: 768px) {
+    .showroom .content {
+      padding: 0 0 0 3.82vw; } }
+  .showroom .content > section h1 {
+    box-shadow: inset 0 -1px 0 0 #d1d2d4; }
+  @media screen and (max-width: 511px) {
+    .showroom .content > section.table {
+      display: block; }
+      .showroom .content > section.table thead,
+      .showroom .content > section.table tbody,
+      .showroom .content > section.table tfoot,
+      .showroom .content > section.table tr,
+      .showroom .content > section.table td,
+      .showroom .content > section.table th {
+        display: block; }
+      .showroom .content > section.table tbody tr:last-child td:not(:last-child) {
+        border-bottom: 1px solid #dadbdd; } }
+  .showroom .content > section.table th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .showroom .content > section.buttons .button.outlined {
+    display: inline-block;
+    margin: 0 0.7888em 1.57761em 0;
+    padding: 0 0.7888em;
+    line-height: 2.55263em;
+    background: white;
+    border-radius: 0.24063em;
+    border: none;
+    outline: none;
+    box-shadow: inset 0 0 0 2px #bcbdc1;
+    vertical-align: middle;
+    font-family: Malva;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    color: #77787c;
+    cursor: pointer; }
+    .showroom .content > section.buttons .button.outlined:visited {
+      box-shadow: inset 0 0 0 2px #bcbdc1;
       font-family: Malva;
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
-      text-align: center;
+      text-decoration: none;
+      text-transform: none; }
+    .showroom .content > section.buttons .button.outlined:hover {
+      background: #e2e3e5;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-decoration: none;
+      text-transform: none;
+      color: #444444; }
+    .showroom .content > section.buttons .button.outlined:active {
+      background: #dadbdd;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-decoration: none;
+      text-transform: none;
+      color: #444444; }
+    .showroom .content > section.buttons .button.outlined.disabled {
+      opacity: 0.382; }
+    .showroom .content > section.buttons .button.outlined:focus {
+      outline: none; }
+  .showroom .content > section.buttons .button.with-shadow {
+    display: inline-block;
+    margin: 0 0.7888em 1.57761em 0;
+    padding: 0 0.7888em;
+    line-height: 2.55263em;
+    background: #0098e6;
+    border-radius: 0.24063em;
+    border: none;
+    outline: none;
+    box-shadow: 0 3px 3px 0 #a9aaae;
+    vertical-align: middle;
+    font-family: Malva;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+    cursor: pointer; }
+    .showroom .content > section.buttons .button.with-shadow:visited {
+      background: #0098e6;
+      box-shadow: 0 3px 3px 0 #a9aaae;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
       text-decoration: none;
       text-transform: none;
       color: white; }
-      @media screen and (max-width: 511px) {
-        .showroom main .content > section.tags .tag.cool {
-          font-size: 12px;
-          line-height: 21px; } }
-      @media screen and (min-width: 512px) and (max-width: 767px) {
-        .showroom main .content > section.tags .tag.cool {
-          font-size: 13px;
-          line-height: 24px; } }
-      @media screen and (min-width: 768px) and (max-width: 1023px) {
-        .showroom main .content > section.tags .tag.cool {
-          font-size: 13px;
-          line-height: 26px; } }
-      @media screen and (min-width: 1024px) and (max-width: 1199px) {
-        .showroom main .content > section.tags .tag.cool {
-          font-size: 14px;
-          line-height: 28px; } }
-      @media screen and (min-width: 1200px) {
-        .showroom main .content > section.tags .tag.cool {
-          font-size: 15px;
-          line-height: 31px; } }
-    .showroom main .content > section.modals .open.button {
-      margin-bottom: 0; }
-      @media screen and (max-width: 511px) {
-        .showroom main .content > section.modals .open.button {
-          display: block;
-          margin-right: 0; } }
-    .showroom main .content pre.code {
-      margin: 0 0 1.57761em 0;
-      padding: 0.48751em 1em;
-      background: #fafafa;
-      box-shadow: 0 0 0 1px #d1d2d4;
-      border-radius: 0 0.24063em 0.24063em 0;
-      font-family: Consolas, Courier New, monospace;
-      white-space: pre-wrap;
-      word-wrap: break-word; }
-      .showroom main .content pre.code:before {
+    .showroom .content > section.buttons .button.with-shadow:hover {
+      background: #00a2f5;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-decoration: none;
+      text-transform: none;
+      color: white; }
+    .showroom .content > section.buttons .button.with-shadow:active {
+      background: #0091dc;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-decoration: none;
+      text-transform: none;
+      color: white; }
+    .showroom .content > section.buttons .button.with-shadow.disabled {
+      opacity: 0.382; }
+    .showroom .content > section.buttons .button.with-shadow:focus {
+      outline: none; }
+  .showroom .content > section.buttons .button.beveled {
+    display: inline-block;
+    margin: 0 0.7888em 1.57761em 0;
+    padding: 0 0.7888em;
+    line-height: 2.55263em;
+    background: linear-gradient(to bottom, #ededed 0%, #d1d2d4 100%);
+    border-radius: 0.24063em;
+    border: none;
+    outline: none;
+    box-shadow: inset 0 -2px 0 0 #bcbdc1;
+    vertical-align: middle;
+    font-family: Malva;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    color: #4c4d4f;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px white; }
+    .showroom .content > section.buttons .button.beveled:visited {
+      box-shadow: inset 0 -2px 0 0 #bcbdc1;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-decoration: none;
+      text-transform: none; }
+    .showroom .content > section.buttons .button.beveled:hover {
+      background: linear-gradient(to bottom, #e2e3e5 0%, #bcbdc1 100%);
+      box-shadow: inset 0 -2px 0 0 #a9aaae;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-decoration: none;
+      text-transform: none;
+      color: #2c2d30; }
+    .showroom .content > section.buttons .button.beveled:active {
+      background: linear-gradient(to bottom, #bcbdc1 0%, #e2e3e5 100%);
+      box-shadow: inset 0 2px 0 0 #a9aaae;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-decoration: none;
+      text-transform: none;
+      color: #2c2d30; }
+    .showroom .content > section.buttons .button.beveled.disabled {
+      opacity: 0.382; }
+    .showroom .content > section.buttons .button.beveled:focus {
+      outline: none; }
+  .showroom .content > section.buttons .button.green {
+    background: #68bb12; }
+    .showroom .content > section.buttons .button.green:hover {
+      background: #6dc413; }
+    .showroom .content > section.buttons .button.green:active {
+      background: #63b211; }
+  .showroom .content > section.flex-tiles .tiles {
+    margin: 0 0 1.57761em 0;
+    counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+    display: block;
+    padding: 1em 1em 0;
+    border: 1px solid #d1d2d4; }
+    .showroom .content > section.flex-tiles .tiles > * {
+      counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+    @media screen and (min-width: 512px) {
+      .showroom .content > section.flex-tiles .tiles {
+        counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; }
+        .showroom .content > section.flex-tiles .tiles > * {
+          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+        .showroom .content > section.flex-tiles .tiles > * {
+          overflow: hidden;
+          flex: 0 0 50%;
+          max-width: 50%;
+          padding: 0 0.5em 1em;
+          background-clip: content-box !important; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+            padding-right: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+            padding-left: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
+            padding-right: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n) {
+            padding-right: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+            padding-left: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
+            padding-left: 0.5em;
+            margin-left: auto;
+            margin-right: auto; } }
+    @media screen and (min-width: 768px) {
+      .showroom .content > section.flex-tiles .tiles {
+        counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; }
+        .showroom .content > section.flex-tiles .tiles > * {
+          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+        .showroom .content > section.flex-tiles .tiles > * {
+          overflow: hidden;
+          flex: 0 0 33.33333%;
+          max-width: 33.33333%;
+          padding: 0 0.5em 1em;
+          background-clip: content-box !important; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+            padding-right: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+            padding-left: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
+            padding-right: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+            padding-left: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
+            padding-right: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(3n) {
+            padding-right: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+            padding-left: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
+            padding-left: 0.5em;
+            margin-left: auto;
+            margin-right: auto; } }
+    @media screen and (min-width: 1200px) {
+      .showroom .content > section.flex-tiles .tiles {
+        counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; }
+        .showroom .content > section.flex-tiles .tiles > * {
+          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+        .showroom .content > section.flex-tiles .tiles > * {
+          overflow: hidden;
+          flex: 0 0 25%;
+          max-width: 25%;
+          padding: 0 0.5em 1em;
+          background-clip: content-box !important; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+            padding-right: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+            padding-left: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
+            padding-right: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+            padding-left: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n), .showroom .content > section.flex-tiles .tiles > *:nth-child(2n):last-child {
+            padding-right: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n + 1) {
+            padding-left: 0.5em; }
+          .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
+            padding-right: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(4n) {
+            padding-right: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+            padding-left: 0; }
+          .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
+            padding-left: 0.5em;
+            margin-left: auto;
+            margin-right: auto; } }
+    .showroom .content > section.flex-tiles .tiles .tile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 3.82em;
+      margin-bottom: 1em;
+      background: #ededed; }
+      @media screen and (min-width: 512px) {
+        .showroom .content > section.flex-tiles .tiles .tile {
+          height: 6.18em;
+          margin-bottom: 0; } }
+      .showroom .content > section.flex-tiles .tiles .tile:before {
+        content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
+        display: block; }
+  .showroom .content > section.tags .tag.cool {
+    display: inline-block;
+    padding: 0 0.7888em;
+    line-height: 2.55263em;
+    background: #68bb12;
+    border-radius: 0.24063em;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+    font-family: Malva;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    color: white; }
+    @media screen and (max-width: 511px) {
+      .showroom .content > section.tags .tag.cool {
+        font-size: 12px;
+        line-height: 21px; } }
+    @media screen and (min-width: 512px) and (max-width: 767px) {
+      .showroom .content > section.tags .tag.cool {
+        font-size: 13px;
+        line-height: 24px; } }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .showroom .content > section.tags .tag.cool {
+        font-size: 13px;
+        line-height: 26px; } }
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+      .showroom .content > section.tags .tag.cool {
+        font-size: 14px;
+        line-height: 28px; } }
+    @media screen and (min-width: 1200px) {
+      .showroom .content > section.tags .tag.cool {
+        font-size: 15px;
+        line-height: 31px; } }
+  .showroom .content > section.modals .open.button {
+    margin-bottom: 0; }
+    @media screen and (max-width: 511px) {
+      .showroom .content > section.modals .open.button {
         display: block;
-        color: #a9aaae; }
-      .showroom main .content pre.code.html:before {
-        content: 'HTML:'; }
-      .showroom main .content pre.code.sass:before {
-        content: 'SASS:'; }
-      .showroom main .content pre.code.javascript:before {
-        content: 'JavaScript:'; }
+        margin-right: 0; } }
+  .showroom .content pre.code {
+    margin: 0 0 1.57761em 0;
+    padding: 0.48751em 1em;
+    background: #fafafa;
+    box-shadow: 0 0 0 1px #d1d2d4;
+    border-radius: 0 0.24063em 0.24063em 0;
+    font-family: Consolas, Courier New, monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word; }
+    .showroom .content pre.code:before {
+      display: block;
+      color: #a9aaae; }
+    .showroom .content pre.code.html:before {
+      content: 'HTML:'; }
+    .showroom .content pre.code.sass:before {
+      content: 'SASS:'; }
+    .showroom .content pre.code.javascript:before {
+      content: 'JavaScript:'; }
   .showroom > footer {
     display: block;
     position: fixed;
@@ -1420,3 +1446,25 @@ html {
         margin-bottom: 0; }
         .showroom .modal footer .button:last-child {
           margin-right: 0; }
+
+main {
+  width: 100%;
+  min-width: 320px !important;
+  max-width: 1440px !important;
+  margin: 0 auto;
+  padding-left: 6.18vw;
+  padding-right: 6.18vw;
+  padding-top: 2em; }
+  @media screen and (max-width: 320px) {
+    main {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (min-width: 1440px) {
+    main {
+      padding-left: 89px;
+      padding-right: 89px; } }
+  @media screen and (min-width: 768px) {
+    main {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 3.82em; } }

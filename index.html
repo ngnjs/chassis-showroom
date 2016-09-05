@@ -17,9 +17,9 @@
 
     <script src="https://cdn.jsdelivr.net/webcomponentsjs/latest/webcomponents.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/chassis/1.0.30/chassis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/g/ngn-components@0.0.34(ngn-cycle.min.js+ngn-layout.min.js+ngn-list.min.js)"></script>
-    <script src="https://rawgit.com/ngnjs/chassis-components/master/dist/chassis-overlay.min.js"></script>
+    <script src="https://cdn.author.io/ngn/latest/chassis.min.js"></script>
+    <script src="https://cdn.author.io/chassis/components/latest/chassis-cycle.min.js"></script>
+    <script src="https://cdn.author.io/chassis/components/latest/chassis-overlay.min.js"></script>
 
     <link rel="stylesheet" href="stylesheets/main.css">
 
@@ -44,6 +44,12 @@
           </a>
           <a href="#buttons">
             Buttons
+          </a>
+          <a href="#tags">
+            Tags
+          </a>
+          <a href="#table">
+            Table
           </a>
           <a href="#flex_tiles">
             Flex Tiles
@@ -206,6 +212,115 @@ or
           </section>
         </section>
 
+        <section id="tags" class="tags">
+          <h1>Tags</h1>
+          <p>
+            Tags display inline with text: <span class="tag">Default Tag</span> They can be customized or extended as shown below. <span class="cool tag">Cool!</span>
+          </p>
+          <pre class="html code">&lt;span class="cool tag" href="/url">
+  Cool!
+&lt;/span></pre>
+        <pre class="sass code">.cool.tag {
+  @include chassis-tag((
+    default: (
+      bg-color: $green
+    )
+  ));
+}</pre>
+        </section>
+
+        <section id="table" class="table">
+          <h1>Table</h1>
+          <p>
+            Basic Golden Ratio Typography-compliant table component. You can turn the default border styling off and style table cells manually if desired. Ellipsis will work on all table cells.
+          </p>
+          <p>
+            You can optionally use the <code>stack-below</code> mixin to cause the table layout to stack below a specified breakpoint. For example:
+          </p>
+          <pre class="sass code">table {
+  @include stack-below(small);
+}</pre>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Header 1 has ellipsis
+                </th>
+                <th>
+                  Header 2
+                </th>
+                <th>
+                  Header 3
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Content 1
+                </td>
+                <td>
+                  Content 2
+                </td>
+                <td>
+                  Content 3
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Content 1
+                </td>
+                <td>
+                  Content 2
+                </td>
+                <td>
+                  Content 3
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Content 1
+                </td>
+                <td>
+                  Content 2 is longer, and will wrap
+                </td>
+                <td>
+                  Content 3
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Content 1
+                </td>
+                <td>
+                  Content 2
+                </td>
+                <td>
+                  Content 3
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Content 1
+                </td>
+                <td>
+                  Content 2
+                </td>
+                <td>
+                  Content 3
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">
+                  Footer 1
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+
         <section id="flex_tiles" class="flex-tiles">
           <h1>Flex Tiles</h1>
 
@@ -248,23 +363,6 @@ or
   }
 }</pre>
 
-        </section>
-        
-        <section id="tags" class="tags">
-          <h1>Tags</h1>
-          <p>
-            Tags display inline with text: <span class="tag">Default Tag</span> They can be customized or extended as shown below. <span class="cool tag">Cool!</span>
-          </p>
-          <pre class="html code">&lt;span class="cool tag" href="/url">
-  Cool!
-&lt;/span></pre>
-        <pre class="sass code">.cool.tag {
-  @include chassis-tag((
-    default: (
-      bg-color: $green
-    )
-  ));
-}</pre>
         </section>
 
         <section id="modals" class="modals">
@@ -453,31 +551,31 @@ or
         closeButton.addEventListener('click', function() {
           overlay.close();
         });
-        
+
         var computedLineHeightContainers = document.querySelectorAll('.compute-line-height');
-        
+
         setLineHeight(computedLineHeightContainers);
-        
+
         window.addEventListener('resize', function() {
           setLineHeight(computedLineHeightContainers);
         });
-        
+
         function setLineHeight(containers) {
           for ( var i = 0; i < containers.length; i++ ) {
             containers[i].style.lineHeight = calculateLineHeight(containers[i].clientWidth) + 'em';
           }
         }
-        
+
         function calculateLineHeight(lineWidth) {
           var gr = 1.61803398875;
-          
+
           var optimalLine = getOptimalLineDimensions(16, gr);
-          
+
           return (
             gr - ( ( 1 / ( 2 * gr ) ) * ( 1 - ( lineWidth / optimalLine.width ) ) )
           );
         }
-        
+
         function getOptimalLineDimensions(fontSize, ratio) {
           return {
             height: fontSize * ratio,
