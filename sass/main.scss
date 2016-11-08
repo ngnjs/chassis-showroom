@@ -218,6 +218,24 @@ $font-family: Malva;
         }
       }
 
+      &.toolbars {
+        nav.toolbar {
+          background: $grey-n00;
+          
+          .dropdown-menu {
+            &:hover {
+              background: $grey-n01;
+            }
+            
+            nav,
+            menu,
+            .menu {
+              background: $grey-n00;
+            }
+          }
+        }
+      }
+      
       &.modals {
         .open.button {
           margin-bottom: 0;
