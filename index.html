@@ -39,102 +39,107 @@
     <main>
       <aside class="sidebar">
         <nav>
-          <a href="#typography">
+          <a href="#typography" data-section="typography">
             Typography
           </a>
-          <a href="#buttons">
+          <a href="#buttons" data-section="buttons">
             Buttons
           </a>
-          <a href="#tags">
+          <a href="#tags" data-section="tags">
             Tags
           </a>
-          <a href="#toolbars">
+          <a href="#toolbars" data-section="toolbars">
             Toolbars
           </a>
-          <a href="#table">
+          <a href="#table" data-section="table">
             Table
           </a>
-          <a href="#flex_tiles">
+          <a href="#flex_tiles" data-section="flex_tiles">
             Flex Tiles
           </a>
-          <a href="#modals">
+          <a href="#modals" data-section="modals">
             Modal Window
           </a>
-          <a class="disabled" href="javascript:;">
-            A Disabled Link
+          <a href="#forms" data-section="forms">
+            Forms
           </a>
+          <!-- <a class="disabled" href="javascript:;">
+            A Disabled Link
+          </a> -->
         </nav>
       </aside>
 
       <div class="content">
 
-        <section id="typography" class="typography">
-          <h1>Chassis-Sass</h1>
+        <section id="typography" class="hidden typography">
           <section>
-            <p>
-              Chassis is a Sass-based CSS framework for building fluid, responsive websites that are consistent in design throughout. "Who cares?" you ask. Well, Chassis has a few key differences from other CSS frameworks:
-            </p>
+            <h1>Chassis-Sass</h1>
+            <section>
+              <p>
+                Chassis is a Sass-based CSS framework for building fluid, responsive websites that are consistent in design throughout. "Who cares?" you ask. Well, Chassis has a few key differences from other CSS frameworks:
+              </p>
+            </section>
+            <section>
+              <h2>Typography is automatically optimized to your custom breakpoints</h2>
+              <p>
+                Chassis has good typography built-in. It automatically calculates optimal font-size and line-height for every viewport size, using its default set of breakpoints or your own custom set.
+              </p>
+            </section>
+            <section>
+              <h2>Every element of your web page adheres to these typography rules</h2>
+              <p>
+                Chassis is the only CSS framework in the world that bases the layout of all elements on typography rules. This means that not only will your typography automatically adjust to any screen size, <span class="bold">so will every other element on the page.</span>
+              </p>
+              <p>
+                Try it. Go ahead and shrink this window and watch how every element on the page scales appropriately. This all happens automatically, with no messy CSS or JavaScript.
+              </p>
+            </section>
+            <section>
+              <h2>Golden Ratio Typography</h2>
+              <p>
+                The typography rules inherent in Chassis weren't chosen arbitrarily; They are based on time-tested Golden Ratio Typography, optimized for the web. Not only that, but you can also specify different type scales if you choose.
+              </p>
+              <p>
+                In the event that you need more fine-grained control over individual pieces of typography, you can still specify font-sizes and line-heights as you normally would.
+              </p>
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <h1>Get all the UI elements you need with Chassis Detailer</h1>
+              <p>
+                You can use Chassis's typography-based layout system by itself if you'd like, but if you need UI elements to work with, it is as simple as adding Chassis Detailer.
+              </p>
+              <p>
+                Chassis Detailer contains a suite of UI components, all of which work seamlessly with the Chassis typography-based layout system.
+              </p>
+            </section>
+            <section>
+              <h2>Simple, straightforward customization</h2>
+              <p>
+                All Detailer UI components are fully themable and can be extended with custom properties. It is easy to make many different versions of each component to suit your needs while maintaining automatic responsive behavior.
+              </p>
+            </section>
+            <section>
+              <h2>Only load the components you need</h2>
+              <p>
+                Chassis Detailer allows you to import exactly what you need, and nothing you don't, keeping CSS file size to a minimum.
+              </p>
+            </section>
           </section>
           <section>
-            <h2>Typography is automatically optimized to your custom breakpoints</h2>
+            <h1>The most semantic framework</h1>
             <p>
-              Chassis has good typography built-in. It automatically calculates optimal font-size and line-height for every viewport size, using its default set of breakpoints or your own custom set.
-            </p>
-          </section>
-          <section>
-            <h2>Every element of your web page adheres to these typography rules</h2>
-            <p>
-              Chassis is the only CSS framework in the world that bases the layout of all elements on typography rules. This means that not only will your typography automatically adjust to any screen size, <span class="bold">so will every other element on the page.</span>
+              Chassis applies the principles of <a href="https://github.com/gbdrummer/symbiocss" target="_blank">SymbioCSS</a> to provide the cleanest, most semantic HTML/CSS development experience possible. There are no cryptic class names to decipher, no proprietary HTML attributes, and every CSS selector reads like a short English phrase.
             </p>
             <p>
-              Try it. Go ahead and shrink this window and watch how every element on the page scales appropriately. This all happens automatically, with no messy CSS or JavaScript.
-            </p>
-          </section>
-          <section>
-            <h2>Golden Ratio Typography</h2>
-            <p>
-              The typography rules inherent in Chassis weren't chosen arbitrarily; They are based on time-tested Golden Ratio Typography, optimized for the web. Not only that, but you can also specify different type scales if you choose.
-            </p>
-            <p>
-              In the event that you need more fine-grained control over individual pieces of typography, you can still specify font-sizes and line-heights as you normally would.
+              In addition, Chassis is totally self-contained. You are free to use any style of HTML or CSS in your own stylesheets without having to worry about scoping conflicts.
             </p>
           </section>
         </section>
 
-        <section>
-          <section>
-            <h1>Get all the UI elements you need with Chassis Detailer</h1>
-            <p>
-              You can use Chassis's typography-based layout system by itself if you'd like, but if you need UI elements to work with, it is as simple as adding Chassis Detailer.
-            </p>
-            <p>
-              Chassis Detailer contains a suite of UI components, all of which work seamlessly with the Chassis typography-based layout system.
-            </p>
-          </section>
-          <section>
-            <h2>Simple, straightforward customization</h2>
-            <p>
-              All Detailer UI components are fully themable and can be extended with custom properties. It is easy to make many different versions of each component to suit your needs while maintaining automatic responsive behavior.
-            </p>
-          </section>
-          <section>
-            <h2>Only load the components you need</h2>
-            <p>
-              Chassis Detailer allows you to import exactly what you need, and nothing you don't, keeping CSS file size to a minimum.
-            </p>
-          </section>
-        </section>
-        <section>
-          <h1>The most semantic framework</h1>
-          <p>
-            Chassis applies the principles of <a href="https://github.com/gbdrummer/symbiocss" target="_blank">SymbioCSS</a> to provide the cleanest, most semantic HTML/CSS development experience possible. There are no cryptic class names to decipher, no proprietary HTML attributes, and every CSS selector reads like a short English phrase.
-          </p>
-          <p>
-            In addition, Chassis is totally self-contained. You are free to use any style of HTML or CSS in your own stylesheets without having to worry about scoping conflicts.
-          </p>
-        </section>
-
-        <section id="buttons" class="buttons">
+        <section id="buttons" class="hidden buttons">
           <h1>Buttons</h1>
 
           <section class="default buttons">
@@ -215,7 +220,7 @@ or
           </section>
         </section>
 
-        <section id="tags" class="tags">
+        <section id="tags" class="hidden tags">
           <h1>Tags</h1>
           <p>
             Tags display inline with text: <span class="tag">Default Tag</span> They can be customized or extended as shown below. <span class="cool tag">Cool!</span>
@@ -231,8 +236,8 @@ or
   ));
 }</pre>
         </section>
-        
-        <section id="toolbars" class="toolbars">
+
+        <section id="toolbars" class="hidden toolbars">
           <h1>Toolbars</h1>
           <p>
             Toolbars host a number of different widgets including hover dropdown menus, button groups, etc.
@@ -247,9 +252,18 @@ or
     					</nav>
     				</section>
     			</nav>
+
+          <section class="dropdown-menu">
+            <header>Dropdown Menu</header>
+            <nav class="menu">
+              <a href="javascript:;">Nav Item</a>
+              <a href="javascript:;">Nav Item</a>
+              <a href="javascript:;">Nav Item</a>
+            </nav>
+          </section>
         </section>
-        
-        <section id="table" class="table">
+
+        <section id="table" class="hidden table">
           <h1>Table</h1>
           <p>
             Basic Golden Ratio Typography-compliant table component. You can turn the default border styling off and style table cells manually if desired. Ellipsis will work on all table cells.
@@ -261,6 +275,7 @@ or
   @include stack-below(small);
 }</pre>
           <table>
+            <caption>Table Caption</caption>
             <thead>
               <tr>
                 <th>
@@ -341,7 +356,7 @@ or
           </table>
         </section>
 
-        <section id="flex_tiles" class="flex-tiles">
+        <section id="flex_tiles" class="hidden flex-tiles">
           <h1>Flex Tiles</h1>
 
           <p>
@@ -385,7 +400,7 @@ or
 
         </section>
 
-        <section id="modals" class="modals">
+        <section id="modals" class="hidden modals">
           <h1>Modal Window</h1>
           <a class="open button" href="javascript:;">Open Modal Window</a>
         </section>
@@ -398,14 +413,24 @@ or
 
               <div class="text field">
                 <label for="textfield">Text Input</label>
-                <div class="input">
+                <div class="input-wrapper">
                   <input id="textfield" type="text" name="textfield" value="" required>
+                </div>
+              </div>
+
+              <div class="browser field">
+                <label for="browser_input">Input Field with Browse Button &amp; Placeholder</label>
+                <div class="input-wrapper">
+                  <input id="browser_input" type="text" placeholder="Enter a file name or click Browse&hellip;">
+                  <a class="button">
+                    Browse&hellip;
+                  </a>
                 </div>
               </div>
 
               <div class="textarea field">
                 <label for="textarea">Textarea</label>
-                <div class="input">
+                <div class="input-wrapper">
                   <textarea id="textarea" name="textarea" rows="3" required></textarea>
                 </div>
               </div>
@@ -413,13 +438,13 @@ or
               <div class="row">
                 <div class="optional text field">
                   <label for="numberfield">Number Input</label>
-                  <div class="input">
+                  <div class="input-wrapper">
                     <input id="numberfield" type="number" name="numberfield" value="">
                   </div>
                 </div>
                 <div class="text field">
                   <label for="datefield">Date Input</label>
-                  <div class="input">
+                  <div class="input-wrapper">
                     <input id="datefield" type="date" name="datefield" value="" required>
                   </div>
                 </div>
@@ -452,42 +477,6 @@ or
                   <div class="radio field">
                     <input id="radio_3" type="radio" name="radios" required>
                     <label for="radio_3">Radio Button</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="text field">
-                <label for="browser">Input with Additional Tools</label>
-                <div class="input">
-                  <input id="browser" type="text" name="browser" value="" required>
-                  <a class="button" href="javascript:;">
-                    Add
-                  </a>
-                </div>
-              </div>
-
-              <div class="browser field">
-                <label for="browser_input">Browser Field</label>
-                <div class="input">
-                  <div class="browser">
-                    <input id="browser_input" type="text" placeholder="Enter a file name or click Browse&hellip;">
-                    <a class="button">
-                      Browse&hellip;
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="browser field">
-                <label for="browser_input">Browser Field with Multiple Inputs</label>
-                <div class="input">
-                  <div class="browser">
-                    <input id="browser_input_1" type="text" placeholder="Input 1">
-                    <input id="browser_input_2" type="text" placeholder="Input 2">
-                    <input id="browser_input_3" type="text" placeholder="Input 3">
-                    <a class="button">
-                      Browse&hellip;
-                    </a>
                   </div>
                 </div>
               </div>
@@ -549,6 +538,30 @@ or
 
     <script>
       (function() {
+        var sidebarNavLinks = document.querySelectorAll('.showroom .sidebar nav > a');
+
+        for (var i = 0; i < sidebarNavLinks.length; i++) {
+          handleNavClick(sidebarNavLinks[i], sidebarNavLinks[i].dataset.section);
+        }
+
+        function hideAllSections() {
+          var sections = document.querySelectorAll('.showroom main .content > section');
+
+          for (var i = 0; i < sections.length; i++) {
+            sections[i].classList.add('hidden');
+          }
+        }
+
+        function handleNavClick(link, sectionId) {
+          link.addEventListener('click', function(ev) {
+            hideAllSections();
+
+            document.getElementById(sectionId).classList.remove('hidden');
+          });
+
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+
         // hide body to prevent FOUC
         // document.body.classList.add('hidden');
         // window.addEventListener('WebComponentsReady', function() {

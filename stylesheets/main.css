@@ -1,152 +1,4 @@
-@charset "UTF-8";
-/** @function chassis-get-z-index
- * @param {string} $key
- * Name of element from $CHASSIS_Z-INDEX_DEFAULTS map
- * found in chassis-sass ./config/z-index
- */
-/*
-
-Viewport Width-specific styles can be applied in 5 different ways:
-
-  1. Targeting all Viewport Width Ranges below the specified range:
-
-    ```SASS
-    @include below-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths below, but not including, the lower bound
-    of the "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 0px - 767px wide:
-    ✓ below minimum UI
-    ✓ tiny
-    ✓ small
-    ✘ medium
-    ✘ large
-    ✘ huge
-    ✘ above maximum UI width
-
- 2. Targeting all Viewport Width Ranges up to, and including, the specified range:
-
-    ```SASS
-    @include max-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths below, but not including, the upper bound
-    of the "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 0px - 1023px wide:
-    ✓ below minimum UI width
-    ✓ tiny
-    ✓ small
-    ✓ medium
-    ✘ large
-    ✘ huge
-    ✘ above maximum UI width
-
- 3. Targeting a viewport-width range directly:
-
-    ```SASS
-    @include at-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths at or above the lower bound, and below (but
-    not including) the upper bound of the "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 768px - 1023px wide:
-    ✘ below minimum UI
-    ✘ tiny
-    ✘ small
-    ✓ medium
-    ✘ large
-    ✘ huge
-    ✘ above maximum UI width
-
- 4. Targeting all Viewport Width Ranges starting with the specified range and up:
-
-    ```SASS
-    @include min-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths at or above the lower bound of the
-    "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 768px - infinite wide:
-    ✘ below minimum UI
-    ✘ tiny
-    ✘ small
-    ✓ medium
-    ✓ large
-    ✓ huge
-    ✓ above maximum UI width
-
- 5. Targeting all Viewport Width Ranges above, but not including, the specified
-    range:
-
-    ```SASS
-    @include above-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths above the upper bound of the "medium"
-    Viewport Width Range
-
-    By default, the above code would affect viewports 1025px - infinite wide:
-    ✘ below minimum UI
-    ✘ tiny
-    ✘ small
-    ✘ medium
-    ✓ large
-    ✓ huge
-    ✓ above maximum UI width
-
-*/
-/**
- * @mixin below-viewport-width()
- * Apply styling only at viewport widths below, but not including, the lower
- * bound of the specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
-/**
- * @mixin max-viewport-width()
- * Apply styling only at viewport widths below, but not including, the upper
- * bound of the specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
-/**
- * @mixin at-viewport-width()
- * Apply styling only at viewport widths at or above the lower bound
- * and below, but not including, the upper bound of the specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
-/** @mixin min-viewport-width()
- * Apply styling only at viewport widths at or above the lower bound of the
- * specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
-/**
- * @mixin above-viewport-width()
- * Apply styling only at viewport widths above the upper bound of the
- * specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
-.chassis .button,
-.chassis a.button,
-.chassis button, .showroom .content > section.buttons .custom-button, .showroom .content > section.buttons .button.outlined, .showroom .content > section.buttons .button.with-shadow, .showroom .content > section.buttons .button.beveled {
+.chassis .button, .chassis button, .showroom .content > section.buttons .custom-button, .showroom .content > section.buttons .button.outlined, .showroom .content > section.buttons .button.with-shadow, .showroom .content > section.buttons .button.beveled {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -155,71 +7,9 @@ Viewport Width-specific styles can be applied in 5 different ways:
   -o-user-select: none;
   user-select: none; }
 
-.chassis a.disabled, .chassis .disabled.button,
-.chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button, .showroom .content > section.buttons .button.outlined.disabled, .showroom .content > section.buttons .button.with-shadow.disabled, .showroom .content > section.buttons .button.beveled.disabled {
+.chassis a.disabled, .chassis .disabled.button, .chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button, .showroom .content > section.buttons .button.outlined.disabled, .showroom .content > section.buttons .button.with-shadow.disabled, .showroom .content > section.buttons .button.beveled.disabled {
   pointer-events: none; }
 
-/**
- * @function get-optimal-line-dimensions
- * Return optimized line-height and width based on font-size and type-scale-ratio
- * @param {px} $font-size
- * @param {int} $ratio
- * Type scale ratio
- */
-/**
- * @function calculate-line-height
- * Returns adjusted line-height for a particular font-size and viewport-width-range
- * @param {px} $font-size
- * @param {px} $upper-bound
- * viewport-width-range upper bound
- */
-/**
- * @mixin global-typography-rules
- * Generate default typography rules for standard elements
- * This mixin is used in the chassis-sass core package to establish typography
- * rules at each breakpoint
- * @param {var} $upper-bound
- * Upper Bound of the current viewport-width-range
- */
-/**
- * @mixin font-size
- * Sets font-size and line-height, and optionally margin-bottom, on an element
- * based on Golden Ratio Typography rules, in ems
- * @param {string} $alias
- * Name of font-size alias (as defined in ./definitions)
- * @param {int} $multiplier
- * Integer to multiply calculated property values by
- * @param {bool} $has-margin
- * Determines whether or not to add a calculated bottom-margin property
- */
-/**
- * @mixin inline-layout-rules
- * Sets margin, padding, and line-height on inline elements that are not just
- * plain text, ie buttons, form fields, tags, etc.
- * Values are calculated in ems using Golden Ratio Typography rules
- * @param {string} $alias
- * Default font-size category for this element
- * @param {bool} $has-padding
- * Determines whether or not to output padding rules
- * @param {bool} $has-margin
- * Determines whether or not to output margin rules
- * @param {bool} $multi-line
- * If element displays inline but can contain multiple lines of text within 
- * itself, like a textarea or contenteditable, set this to true. This will 
- * ensure correct line-height.
- * @param {bool} $add-height-rule
- * Add height rule that matches line-height. Useful in browsers which do not
- * resize containers in respect to line-height
- */
-/**
- * @mixin block-layout-rules
- * Sets margin, padding, and line-height on block elements
- * Values are calculated in ems using Golden Ratio Typography rules
- * @param {bool} $has-padding
- * Determines whether or not to output padding rules
- * @param {bool} $has-margin
- * Determines whether or not to output margin rules
- */
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -277,6 +67,30 @@ button {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important; }
+
+.thin-weight {
+  font-weight: 100 !important; }
+
+.light-weight {
+  font-weight: 300 !important; }
+
+.regular-weight {
+  font-weight: 400 !important; }
+
+.semibold-weight {
+  font-weight: 500 !important; }
+
+.bold-weight {
+  font-weight: 700 !important; }
+
+.ultra-weight {
+  font-weight: 900 !important; }
+
+.normal-style {
+  font-style: normal !important; }
+
+.italic-style {
+  font-style: italic !important; }
 
 .width-constraint {
   width: 100%;
@@ -554,48 +368,6 @@ button {
   src: local("Malva Bold"), url("/resources/fonts/Malva-Bold.otf");
   font-weight: 700; }
 
-/**
- * @mixin chassis-default-rule
- * Apply CSS property value if it is specified in passed-in component defs map
- * Otherwise, use default value
- * @param {string} $property
- * CSS Property Name
- * @param {map} $settings
- * Passed-in component defs map
- * @param {string} $key
- * Property key name in $settings map
- * @param {var or string} $default-value
- * Default theme fallback value
- */
-/**
- * @mixin chassis-pseudo-class-rule
- * Apply CSS property value to a pseudo-class if it is specified in passed-in 
- * component defs map, and is different from the default property value
- * Otherwise, use default value
- * @param {string} $property
- * CSS Property Name
- * @param {map} $default-settings
- * Passed-in component defs 'default' map
- * @param {map} $custom-settings
- * Passed-in component defs pseudo-class map
- * @param {string} $key
- * Property key name in $settings map
- * @param {var or string} $default-value
- * Default theme fallback value
- */
-/**
- * @mixin chassis-generate-box-shadow
- * Generate box-shadow property from list and apply border-properties
- * This allows borders to be created using box-shadow instead of border property
- * @param {map} $defs
- * Passed-in component defs map
- * @param {var or string} $default-border-thickness
- * Detailer default theme border-thickness var or custom string
- * @param {var or string} $default-border-color
- * Detailer default theme border-color var or custom string
- * @param {var or string} $default-box-shadow
- * Detailer default theme box-shadow var or custom string
- */
 html {
   background: white; }
 
@@ -603,8 +375,6 @@ html {
   font-family: Malva;
   font-weight: 400;
   font-style: normal;
-  font-style: normal;
-  font-variant: normal;
   font-variant: normal;
   color: #444444; }
   .chassis a {
@@ -624,47 +394,46 @@ html {
     font-weight: 700;
     font-style: normal;
     font-variant: normal;
+    color: inherit;
     text-transform: none;
     text-decoration: none; }
   .chassis h2 {
     font-weight: 700;
     font-style: normal;
     font-variant: normal;
+    color: inherit;
     text-transform: none;
     text-decoration: none; }
   .chassis h3 {
     font-weight: 700;
     font-style: normal;
     font-variant: normal;
+    color: inherit;
     text-transform: none;
     text-decoration: none; }
   .chassis h4 {
     font-weight: 500;
     font-style: normal;
     font-variant: normal;
+    color: inherit;
     text-transform: none;
     text-decoration: none; }
   .chassis h5 {
     font-weight: 500;
     font-style: normal;
     font-variant: normal;
+    color: inherit;
     text-transform: none;
     text-decoration: none; }
   .chassis h6 {
     font-weight: 500;
     font-style: normal;
     font-variant: normal;
+    color: inherit;
     text-transform: none;
     text-decoration: none; }
 
-/**
- * @mixin chassis-button
- * @param {map} $settings
- * $settings MUST contain a "default" map
- */
-.chassis .button,
-.chassis a.button,
-.chassis button, .showroom .content > section.buttons .custom-button {
+.chassis .button, .chassis button, .showroom .content > section.buttons .custom-button {
   display: inline-block;
   margin: 0 0.7888em 1.57761em 0;
   padding: 0 0.7888em;
@@ -679,20 +448,188 @@ html {
   text-transform: none;
   color: white;
   cursor: pointer; }
-  .chassis .button:visited,
-  .chassis button:visited, .showroom .content > section.buttons .custom-button:visited { }
-  .chassis .button:hover,
-  .chassis button:hover, .showroom .content > section.buttons .custom-button:hover {
-    background: #00a2f5; }
-  .chassis .button:active,
-  .chassis button:active, .showroom .content > section.buttons .custom-button:active {
-    background: #0091dc; }
-  .chassis .disabled.button,
-  .chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button {
+  .chassis .button:visited, .chassis button:visited, .showroom .content > section.buttons .custom-button:visited {
+    background: #0098e6;
+    font-family: Malva;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: white; }
+  .chassis .button:hover, .chassis button:hover, .showroom .content > section.buttons .custom-button:hover {
+    background: #00a2f5;
+    font-family: Malva;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: white; }
+  .chassis .button:active, .chassis button:active, .showroom .content > section.buttons .custom-button:active {
+    background: #0091dc;
+    font-family: Malva;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: white; }
+  .chassis .disabled.button, .chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button {
     opacity: 0.382; }
-  .chassis .button:focus,
-  .chassis button:focus, .showroom .content > section.buttons .custom-button:focus {
+  .chassis .button:focus, .chassis button:focus, .showroom .content > section.buttons .custom-button:focus {
     outline: none; }
+
+.chassis .dropdown-menu {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0; }
+  .chassis .dropdown-menu header {
+    display: flex;
+    align-items: center; }
+  .chassis .dropdown-menu nav,
+  .chassis .dropdown-menu menu,
+  .chassis .dropdown-menu .menu {
+    position: absolute;
+    right: 0;
+    z-index: 997;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+    min-width: 100%;
+    white-space: nowrap; }
+    .chassis .dropdown-menu nav a,
+    .chassis .dropdown-menu menu a,
+    .chassis .dropdown-menu .menu a {
+      flex: 1 0 auto;
+      align-items: center;
+      display: block; }
+  .chassis .dropdown-menu:hover nav,
+  .chassis .dropdown-menu:hover menu,
+  .chassis .dropdown-menu:hover .menu {
+    display: flex;
+    visibility: visible;
+    opacity: 1; }
+
+.chassis ::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none; }
+
+.chassis ::-webkit-input-placeholder,
+.chassis :-moz-placeholder,
+.chassis ::-moz-placeholder,
+.chassis :-ms-input-placeholder {
+  color: #a9aaae; }
+
+.chassis ::placeholder {
+  color: red !important; }
+
+.chassis label {
+  display: block;
+  cursor: pointer; }
+
+.chassis input[type="date"], .chassis input[type="datetime-local"], .chassis input[type="email"], .chassis input[type="file"], .chassis input[type="month"], .chassis input[type="number"], .chassis input[type="password"], .chassis input[type="range"], .chassis input[type="search"], .chassis input[type="tel"], .chassis input[type="text"], .chassis input[type="time"], .chassis input[type="url"], .chassis input[type="week"] {
+  margin: 0 0.7888em 1.57761em 0;
+  padding: 0 0.7888em;
+  line-height: 2.55263em;
+  background: white;
+  box-shadow: inset 0 -1px 0 0 #bcbdc1;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  font-family: Malva;
+  font-weight: 400;
+  color: #444444; }
+  .chassis input[type="date"]:focus, .chassis input[type="datetime-local"]:focus, .chassis input[type="email"]:focus, .chassis input[type="file"]:focus, .chassis input[type="month"]:focus, .chassis input[type="number"]:focus, .chassis input[type="password"]:focus, .chassis input[type="range"]:focus, .chassis input[type="search"]:focus, .chassis input[type="tel"]:focus, .chassis input[type="text"]:focus, .chassis input[type="time"]:focus, .chassis input[type="url"]:focus, .chassis input[type="week"]:focus {
+    outline: 0;
+    box-shadow: inset 0 -2px 0 0 #0098e6; }
+    .chassis input[type="date"]:focus ~ .button,
+    .chassis input[type="date"]:focus button, .chassis input[type="datetime-local"]:focus ~ .button,
+    .chassis input[type="datetime-local"]:focus button, .chassis input[type="email"]:focus ~ .button,
+    .chassis input[type="email"]:focus button, .chassis input[type="file"]:focus ~ .button,
+    .chassis input[type="file"]:focus button, .chassis input[type="month"]:focus ~ .button,
+    .chassis input[type="month"]:focus button, .chassis input[type="number"]:focus ~ .button,
+    .chassis input[type="number"]:focus button, .chassis input[type="password"]:focus ~ .button,
+    .chassis input[type="password"]:focus button, .chassis input[type="range"]:focus ~ .button,
+    .chassis input[type="range"]:focus button, .chassis input[type="search"]:focus ~ .button,
+    .chassis input[type="search"]:focus button, .chassis input[type="tel"]:focus ~ .button,
+    .chassis input[type="tel"]:focus button, .chassis input[type="text"]:focus ~ .button,
+    .chassis input[type="text"]:focus button, .chassis input[type="time"]:focus ~ .button,
+    .chassis input[type="time"]:focus button, .chassis input[type="url"]:focus ~ .button,
+    .chassis input[type="url"]:focus button, .chassis input[type="week"]:focus ~ .button,
+    .chassis input[type="week"]:focus button {
+      box-shadow: inset 0 -2px 0 0 #0098e6; }
+
+.chassis input[type="checkbox"] + label, .chassis input[type="radio"] + label {
+  display: inline-block; }
+
+.chassis textarea {
+  margin: 0 0.7888em 1.57761em 0;
+  padding: 0.48751em 0.7888em;
+  line-height: 1.57761em;
+  overflow: auto;
+  vertical-align: top;
+  resize: none;
+  background: white;
+  box-shadow: inset 0 0 0 1px #bcbdc1;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  font-family: Malva;
+  font-weight: 400;
+  color: #444444; }
+  .chassis textarea:focus {
+    outline: 0;
+    box-shadow: inset 0 0 0 2px #0098e6; }
+
+.chassis button {
+  font-family: Malva;
+  font-weight: 400; }
+
+.chassis select[multiple] {
+  vertical-align: top; }
+
+.chassis .input-wrapper {
+  display: flex; }
+  .chassis .input-wrapper *:last-child {
+    margin-right: 0; }
+  .chassis .input-wrapper *::-ms-backdrop,
+  .chassis .input-wrapper * input:not([type='checkbox']):not([type='radio']) {
+    min-height: 2.61803em; }
+  .chassis .input-wrapper *::-ms-backdrop,
+  .chassis .input-wrapper * textarea {
+    min-height: 7.85409em; }
+  .chassis .input-wrapper input[type="date"], .chassis .input-wrapper input[type="datetime-local"], .chassis .input-wrapper input[type="email"], .chassis .input-wrapper input[type="file"], .chassis .input-wrapper input[type="month"], .chassis .input-wrapper input[type="number"], .chassis .input-wrapper input[type="password"], .chassis .input-wrapper input[type="range"], .chassis .input-wrapper input[type="search"], .chassis .input-wrapper input[type="tel"], .chassis .input-wrapper input[type="text"], .chassis .input-wrapper input[type="time"], .chassis .input-wrapper input[type="url"], .chassis .input-wrapper input[type="week"] {
+    flex: 1 1 auto;
+    width: 0;
+    max-width: 100%;
+    margin: 0; }
+  .chassis .input-wrapper input:focus ~ .button {
+    box-shadow: inset 0 -2px 0 0 #0098e6; }
+  .chassis .input-wrapper textarea {
+    flex: 1 1 auto;
+    width: 0;
+    max-width: 100%;
+    margin-bottom: 0; }
+    .chassis .input-wrapper textarea:last-child {
+      margin-right: 0; }
+  .chassis .input-wrapper .button {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: inset 0 -1px 0 0 #bcbdc1;
+    color: #949599; }
+    .chassis .input-wrapper .button svg.icon {
+      fill: #949599; }
+    .chassis .input-wrapper .button:hover {
+      background: transparent;
+      color: #636466; }
+      .chassis .input-wrapper .button:hover svg.icon {
+        fill: #636466; }
 
 .chassis form > *:last-child,
 .chassis form fieldset > *:last-child {
@@ -707,57 +644,6 @@ html {
 
 .chassis form .field {
   margin: 0 0 1.57761em 0; }
-  .chassis form .field .input {
-    display: flex; }
-    .chassis form .field .input input:not([type='checkbox']):not([type='radio']),
-    .chassis form .field .input textarea {
-      flex: 1 1 auto;
-      width: 0;
-      max-width: 100%;
-      margin-bottom: 0; }
-      .chassis form .field .input input:not([type='checkbox']):not([type='radio']):last-child,
-      .chassis form .field .input textarea:last-child {
-        margin-right: 0; }
-    .chassis form .field .input *::-ms-backdrop,
-    .chassis form .field .input input:not([type='checkbox']):not([type='radio']) {
-      min-height: 2.61803em; }
-    .chassis form .field .input *::-ms-backdrop,
-    .chassis form .field .input textarea {
-      min-height: 7.85409em; }
-    .chassis form .field .input .button {
-      margin-bottom: 0; }
-      .chassis form .field .input .button:last-child {
-        margin-right: 0; }
-    .chassis form .field .input *:last-child {
-      margin-right: 0; }
-    .chassis form .field .input .browser {
-      margin: 0 0.7888em 1.57761em 0;
-      line-height: 2.55263em;
-      display: flex;
-      flex: 1 1 auto;
-      margin-bottom: 0; }
-      .chassis form .field .input .browser:last-child {
-        margin-right: 0; }
-      .chassis form .field .input .browser input:not([type="radio"]):not([type="checkbox"]) {
-        flex: 1 1 auto;
-        margin-right: 0;
-        border-radius: 0; }
-        .chassis form .field .input .browser input:not([type="radio"]):not([type="checkbox"]):first-child {
-          border-radius: 0.24063em 0 0 0.24063em; }
-      .chassis form .field .input .browser .button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0 0.24063em 0.24063em 0;
-        background: #dadbdd;
-        color: #444444;
-        box-shadow: inset -1px 0 0 0 #bcbdc1, inset 0 1px 0 0 #bcbdc1, inset 0 -1px 0 0 #bcbdc1; }
-        .chassis form .field .input .browser .button:visited {
-          background: #dadbdd; }
-        .chassis form .field .input .browser .button:hover {
-          background: #e2e3e4; }
-        .chassis form .field .input .browser .button:active {
-          background: #d5d6d8; }
 
 .chassis form .group {
   margin: 0 0 1.57761em 0; }
@@ -795,59 +681,6 @@ html {
         .chassis form .row .group .field {
           margin: 0; } }
 
-.chassis label {
-  display: block;
-  cursor: pointer; }
-
-.chassis input:not([type='checkbox']):not([type='radio']),
-.chassis textarea {
-  font-family: Malva;
-  font-weight: 400;
-  color: #444444;
-  border: 0;
-  outline: 0;
-  background: white;
-  border-radius: 0.24063em;
-  box-shadow: inset 0.0236em 0.0618em 0.382em 0.0382em rgba(0, 0, 0, 0.118), inset 0 0 0 1px #bcbdc1; }
-  .chassis input:not([type='checkbox']):not([type='radio']):focus,
-  .chassis textarea:focus {
-    outline: 0;
-    box-shadow: inset 0 0 0 1px #0098e6; }
-
-.chassis input:not([type='checkbox']):not([type='radio']) {
-  margin: 0 0.7888em 1.57761em 0;
-  padding: 0 0.7888em;
-  line-height: 2.55263em; }
-
-.chassis textarea {
-  margin: 0 0.7888em 1.57761em 0;
-  padding: 0.48751em 0.7888em;
-  line-height: 1.57761em;
-  overflow: auto;
-  vertical-align: top;
-  resize: none; }
-
-.chassis input[type="checkbox"] + label,
-.chassis input[type="radio"] + label {
-  display: inline-block; }
-
-.chassis button {
-  font-family: Malva;
-  font-weight: 400; }
-
-@media screen and (max-width: 511px) {
-  .chassis button {
-    display: block;
-    width: 100%; } }
-
-.chassis ::-webkit-file-upload-button {
-  padding: 0;
-  border: 0;
-  background: none; }
-
-.chassis select[multiple] {
-  vertical-align: top; }
-
 .chassis .modal {
   align-self: center;
   width: 61.8vw;
@@ -876,7 +709,7 @@ html {
   background-color: rgba(0, 0, 0, 0.8);
   background-image: none;
   background-blend-mode: normal;
-  z-index: 997; }
+  z-index: 996; }
 
 .chassis table {
   table-layout: fixed;
@@ -885,16 +718,17 @@ html {
   border: 0;
   border-collapse: collapse;
   border-spacing: 0; }
-  .chassis table caption,
   .chassis table th,
   .chassis table td {
     padding: 0.48751em 0.7888em;
     line-height: 1.57761em;
     overflow: hidden;
-    font-weight: normal;
-    vertical-align: middle;
+    vertical-align: top;
     text-align: left;
     text-overflow: ellipsis; }
+  .chassis table caption {
+    font-weight: 700;
+    text-align: left; }
   .chassis table thead {
     border-bottom: 3px solid #dadbdd; }
   .chassis table tfoot {
@@ -904,12 +738,6 @@ html {
   .chassis table tbody tr:last-child td {
     border-bottom: 0; }
 
-/**
- * @mixin chassis-tag
- * @param {map} $settings
- * Map of themable properties
- * MUST contain a "default" map
- */
 .chassis .tag {
   display: inline-block;
   padding: 0 0.7888em;
@@ -944,15 +772,25 @@ html {
       font-size: 15px;
       line-height: 31px; } }
 
-/**
- * @mixin tiles
- * @param {int} $columns
- * Number of columns in grid
- * @param {px or em} $gutter-width
- * Amount of space between tiles
- */
-.bold {
-  font-weight: 700 !important; }
+.chassis .toolbar {
+  flex: 1 0 auto;
+  display: flex;
+  align-self: baseline;
+  background: #ededed; }
+  .chassis .toolbar .dropdown-menu {
+    display: block;
+    flex: 0 1 auto; }
+    .chassis .toolbar .dropdown-menu header {
+      background: #ededed;
+      padding: 0 0.7888em;
+      line-height: 2.55263em; }
+    .chassis .toolbar .dropdown-menu nav,
+    .chassis .toolbar .dropdown-menu menu,
+    .chassis .toolbar .dropdown-menu .menu {
+      background: #ededed;
+      padding: 0.48751em 1em; }
+    .chassis .toolbar .dropdown-menu:hover header {
+      background: #e2e3e5; }
 
 .showroom {
   padding-bottom: 3.618em; }
@@ -1008,7 +846,7 @@ html {
         display: block;
         visibility: visible;
         opacity: 1;
-        flex: 1 0 25%;
+        flex: 0 0 25%;
         margin: 0 0 1.57761em 0; } }
     .showroom .sidebar nav a {
       display: block;
@@ -1025,367 +863,373 @@ html {
           box-shadow: none; }
       .showroom .sidebar nav a:active {
         background: #0091dc; }
-  @media screen and (min-width: 768px) {
-    .showroom .content {
-      padding: 0 0 0 3.82vw; } }
-  .showroom .content > section h1 {
-    box-shadow: inset 0 -1px 0 0 #d1d2d4; }
-  @media screen and (max-width: 511px) {
-    .showroom .content > section.table {
-      display: block; }
-      .showroom .content > section.table thead,
-      .showroom .content > section.table tbody,
-      .showroom .content > section.table tfoot,
-      .showroom .content > section.table tr,
-      .showroom .content > section.table td,
-      .showroom .content > section.table th {
-        display: block; }
-      .showroom .content > section.table tbody tr:last-child td:not(:last-child) {
-        border-bottom: 1px solid #dadbdd; } }
-  .showroom .content > section.table th {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .showroom .content > section.buttons .button.outlined {
-    display: inline-block;
-    margin: 0 0.7888em 1.57761em 0;
-    padding: 0 0.7888em;
-    line-height: 2.55263em;
-    background: white;
-    border-radius: 0.24063em;
-    border: none;
-    outline: none;
-    box-shadow: inset 0 0 0 2px #bcbdc1;
-    vertical-align: middle;
-    font-family: Malva;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    color: #77787c;
-    cursor: pointer; }
-    .showroom .content > section.buttons .button.outlined:visited {
-      box-shadow: inset 0 0 0 2px #bcbdc1;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none; }
-    .showroom .content > section.buttons .button.outlined:hover {
-      background: #e2e3e5;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none;
-      color: #444444; }
-    .showroom .content > section.buttons .button.outlined:active {
-      background: #dadbdd;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none;
-      color: #444444; }
-    .showroom .content > section.buttons .button.outlined.disabled {
-      opacity: 0.382; }
-    .showroom .content > section.buttons .button.outlined:focus {
-      outline: none; }
-  .showroom .content > section.buttons .button.with-shadow {
-    display: inline-block;
-    margin: 0 0.7888em 1.57761em 0;
-    padding: 0 0.7888em;
-    line-height: 2.55263em;
-    background: #0098e6;
-    border-radius: 0.24063em;
-    border: none;
-    outline: none;
-    box-shadow: 0 3px 3px 0 #a9aaae;
-    vertical-align: middle;
-    font-family: Malva;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    color: white;
-    cursor: pointer; }
-    .showroom .content > section.buttons .button.with-shadow:visited {
-      background: #0098e6;
-      box-shadow: 0 3px 3px 0 #a9aaae;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none;
-      color: white; }
-    .showroom .content > section.buttons .button.with-shadow:hover {
-      background: #00a2f5;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none;
-      color: white; }
-    .showroom .content > section.buttons .button.with-shadow:active {
-      background: #0091dc;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none;
-      color: white; }
-    .showroom .content > section.buttons .button.with-shadow.disabled {
-      opacity: 0.382; }
-    .showroom .content > section.buttons .button.with-shadow:focus {
-      outline: none; }
-  .showroom .content > section.buttons .button.beveled {
-    display: inline-block;
-    margin: 0 0.7888em 1.57761em 0;
-    padding: 0 0.7888em;
-    line-height: 2.55263em;
-    background: linear-gradient(to bottom, #ededed 0%, #d1d2d4 100%);
-    border-radius: 0.24063em;
-    border: none;
-    outline: none;
-    box-shadow: inset 0 -2px 0 0 #bcbdc1;
-    vertical-align: middle;
-    font-family: Malva;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    color: #4c4d4f;
-    cursor: pointer;
-    text-shadow: 1px 1px 2px white; }
-    .showroom .content > section.buttons .button.beveled:visited {
-      box-shadow: inset 0 -2px 0 0 #bcbdc1;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none; }
-    .showroom .content > section.buttons .button.beveled:hover {
-      background: linear-gradient(to bottom, #e2e3e5 0%, #bcbdc1 100%);
-      box-shadow: inset 0 -2px 0 0 #a9aaae;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none;
-      color: #2c2d30; }
-    .showroom .content > section.buttons .button.beveled:active {
-      background: linear-gradient(to bottom, #bcbdc1 0%, #e2e3e5 100%);
-      box-shadow: inset 0 2px 0 0 #a9aaae;
-      font-family: Malva;
-      font-weight: 400;
-      font-style: normal;
-      font-variant: normal;
-      text-decoration: none;
-      text-transform: none;
-      color: #2c2d30; }
-    .showroom .content > section.buttons .button.beveled.disabled {
-      opacity: 0.382; }
-    .showroom .content > section.buttons .button.beveled:focus {
-      outline: none; }
-  .showroom .content > section.buttons .button.green {
-    background: #68bb12; }
-    .showroom .content > section.buttons .button.green:hover {
-      background: #6dc413; }
-    .showroom .content > section.buttons .button.green:active {
-      background: #63b211; }
-  .showroom .content > section.flex-tiles .tiles {
-    margin: 0 0 1.57761em 0;
-    counter-reset: CHASSIS_FLEX_TILE_COUNTER;
-    display: block;
-    padding: 1em 1em 0;
-    border: 1px solid #d1d2d4; }
-    .showroom .content > section.flex-tiles .tiles > * {
-      counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-    @media screen and (min-width: 512px) {
-      .showroom .content > section.flex-tiles .tiles {
-        counter-reset: CHASSIS_FLEX_TILE_COUNTER;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row; }
-        .showroom .content > section.flex-tiles .tiles > * {
-          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-        .showroom .content > section.flex-tiles .tiles > * {
-          overflow: hidden;
-          flex: 0 0 50%;
-          max-width: 50%;
-          padding: 0 0.5em 1em;
-          background-clip: content-box !important; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
-            padding-right: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
-            padding-left: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
-            padding-right: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n) {
-            padding-right: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
-            padding-left: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
-            padding-left: 0.5em;
-            margin-left: auto;
-            margin-right: auto; } }
+  .showroom .content {
+    flex: 0 0 75%; }
     @media screen and (min-width: 768px) {
-      .showroom .content > section.flex-tiles .tiles {
-        counter-reset: CHASSIS_FLEX_TILE_COUNTER;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row; }
-        .showroom .content > section.flex-tiles .tiles > * {
-          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-        .showroom .content > section.flex-tiles .tiles > * {
-          overflow: hidden;
-          flex: 0 0 33.33333%;
-          max-width: 33.33333%;
-          padding: 0 0.5em 1em;
-          background-clip: content-box !important; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
-            padding-right: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
-            padding-left: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
-            padding-right: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
-            padding-left: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
-            padding-right: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(3n) {
-            padding-right: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
-            padding-left: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
-            padding-left: 0.5em;
-            margin-left: auto;
-            margin-right: auto; } }
-    @media screen and (min-width: 1200px) {
-      .showroom .content > section.flex-tiles .tiles {
-        counter-reset: CHASSIS_FLEX_TILE_COUNTER;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row; }
-        .showroom .content > section.flex-tiles .tiles > * {
-          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-        .showroom .content > section.flex-tiles .tiles > * {
-          overflow: hidden;
-          flex: 0 0 25%;
-          max-width: 25%;
-          padding: 0 0.5em 1em;
-          background-clip: content-box !important; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
-            padding-right: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
-            padding-left: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
-            padding-right: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
-            padding-left: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n), .showroom .content > section.flex-tiles .tiles > *:nth-child(2n):last-child {
-            padding-right: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(2n + 1) {
-            padding-left: 0.5em; }
-          .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
-            padding-right: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(4n) {
-            padding-right: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
-            padding-left: 0; }
-          .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
-            padding-left: 0.5em;
-            margin-left: auto;
-            margin-right: auto; } }
-    .showroom .content > section.flex-tiles .tiles .tile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 3.82em;
-      margin-bottom: 1em;
-      background: #ededed; }
-      @media screen and (min-width: 512px) {
-        .showroom .content > section.flex-tiles .tiles .tile {
-          height: 6.18em;
-          margin-bottom: 0; } }
-      .showroom .content > section.flex-tiles .tiles .tile:before {
-        content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
+      .showroom .content {
+        padding: 0 0 0 3.82vw; } }
+    .showroom .content > section h1 {
+      box-shadow: inset 0 -1px 0 0 #d1d2d4; }
+    @media screen and (max-width: 511px) {
+      .showroom .content > section.table {
         display: block; }
-  .showroom .content > section.tags .tag.cool {
-    display: inline-block;
-    padding: 0 0.7888em;
-    line-height: 2.55263em;
-    background: #68bb12;
-    border-radius: 0.24063em;
-    border: none;
-    outline: none;
-    vertical-align: middle;
-    font-family: Malva;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    color: white; }
-    @media screen and (max-width: 511px) {
-      .showroom .content > section.tags .tag.cool {
-        font-size: 12px;
-        line-height: 21px; } }
-    @media screen and (min-width: 512px) and (max-width: 767px) {
-      .showroom .content > section.tags .tag.cool {
-        font-size: 13px;
-        line-height: 24px; } }
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-      .showroom .content > section.tags .tag.cool {
-        font-size: 13px;
-        line-height: 26px; } }
-    @media screen and (min-width: 1024px) and (max-width: 1199px) {
-      .showroom .content > section.tags .tag.cool {
-        font-size: 14px;
-        line-height: 28px; } }
-    @media screen and (min-width: 1200px) {
-      .showroom .content > section.tags .tag.cool {
-        font-size: 15px;
-        line-height: 31px; } }
-  .showroom .content > section.modals .open.button {
-    margin-bottom: 0; }
-    @media screen and (max-width: 511px) {
-      .showroom .content > section.modals .open.button {
-        display: block;
-        margin-right: 0; } }
-  .showroom .content pre.code {
-    margin: 0 0 1.57761em 0;
-    padding: 0.48751em 1em;
-    background: #fafafa;
-    box-shadow: 0 0 0 1px #d1d2d4;
-    border-radius: 0 0.24063em 0.24063em 0;
-    font-family: Consolas, Courier New, monospace;
-    white-space: pre-wrap;
-    word-wrap: break-word; }
-    .showroom .content pre.code:before {
+        .showroom .content > section.table thead,
+        .showroom .content > section.table tbody,
+        .showroom .content > section.table tfoot,
+        .showroom .content > section.table tr,
+        .showroom .content > section.table td,
+        .showroom .content > section.table th {
+          display: block; }
+        .showroom .content > section.table tbody tr:last-child td:not(:last-child) {
+          border-bottom: 1px solid #dadbdd; } }
+    .showroom .content > section.table th {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .showroom .content > section.buttons .button.outlined {
+      display: inline-block;
+      margin: 0 0.7888em 1.57761em 0;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
+      background: white;
+      border-radius: 0.24063em;
+      border: none;
+      outline: none;
+      box-shadow: inset 0 0 0 2px #bcbdc1;
+      vertical-align: middle;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
+      color: #77787c;
+      cursor: pointer; }
+      .showroom .content > section.buttons .button.outlined:visited {
+        background: white;
+        box-shadow: inset 0 0 0 2px #bcbdc1;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: #77787c; }
+      .showroom .content > section.buttons .button.outlined:hover {
+        background: #e2e3e5;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: #444444; }
+      .showroom .content > section.buttons .button.outlined:active {
+        background: #dadbdd;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: #444444; }
+      .showroom .content > section.buttons .button.outlined.disabled {
+        opacity: 0.382; }
+      .showroom .content > section.buttons .button.outlined:focus {
+        outline: none; }
+    .showroom .content > section.buttons .button.with-shadow {
+      display: inline-block;
+      margin: 0 0.7888em 1.57761em 0;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
+      background: #0098e6;
+      border-radius: 0.24063em;
+      border: none;
+      outline: none;
+      box-shadow: 0 3px 3px 0 #a9aaae;
+      vertical-align: middle;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
+      color: white;
+      cursor: pointer; }
+      .showroom .content > section.buttons .button.with-shadow:visited {
+        background: #0098e6;
+        box-shadow: 0 3px 3px 0 #a9aaae;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: white; }
+      .showroom .content > section.buttons .button.with-shadow:hover {
+        background: #00a2f5;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: white; }
+      .showroom .content > section.buttons .button.with-shadow:active {
+        background: #0091dc;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: white; }
+      .showroom .content > section.buttons .button.with-shadow.disabled {
+        opacity: 0.382; }
+      .showroom .content > section.buttons .button.with-shadow:focus {
+        outline: none; }
+    .showroom .content > section.buttons .button.beveled {
+      display: inline-block;
+      margin: 0 0.7888em 1.57761em 0;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
+      background: linear-gradient(to bottom, #ededed 0%, #d1d2d4 100%);
+      border-radius: 0.24063em;
+      border: none;
+      outline: none;
+      box-shadow: inset 0 -2px 0 0 #bcbdc1;
+      vertical-align: middle;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
+      color: #4c4d4f;
+      cursor: pointer;
+      text-shadow: 1px 1px 2px white; }
+      .showroom .content > section.buttons .button.beveled:visited {
+        background: linear-gradient(to bottom, #ededed 0%, #d1d2d4 100%);
+        box-shadow: inset 0 -2px 0 0 #bcbdc1;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: #4c4d4f; }
+      .showroom .content > section.buttons .button.beveled:hover {
+        background: linear-gradient(to bottom, #e2e3e5 0%, #bcbdc1 100%);
+        box-shadow: inset 0 -2px 0 0 #a9aaae;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: #2c2d30; }
+      .showroom .content > section.buttons .button.beveled:active {
+        background: linear-gradient(to bottom, #bcbdc1 0%, #e2e3e5 100%);
+        box-shadow: inset 0 2px 0 0 #a9aaae;
+        font-family: Malva;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-decoration: none;
+        text-transform: none;
+        color: #2c2d30; }
+      .showroom .content > section.buttons .button.beveled.disabled {
+        opacity: 0.382; }
+      .showroom .content > section.buttons .button.beveled:focus {
+        outline: none; }
+    .showroom .content > section.buttons .button.green {
+      background: #68bb12; }
+      .showroom .content > section.buttons .button.green:hover {
+        background: #6dc413; }
+      .showroom .content > section.buttons .button.green:active {
+        background: #63b211; }
+    .showroom .content > section.flex-tiles .tiles {
+      margin: 0 0 1.57761em 0;
+      counter-reset: CHASSIS_FLEX_TILE_COUNTER;
       display: block;
-      color: #a9aaae; }
-    .showroom .content pre.code.html:before {
-      content: 'HTML:'; }
-    .showroom .content pre.code.sass:before {
-      content: 'SASS:'; }
-    .showroom .content pre.code.javascript:before {
-      content: 'JavaScript:'; }
+      padding: 1em 1em 0;
+      border: 1px solid #d1d2d4; }
+      .showroom .content > section.flex-tiles .tiles > * {
+        counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+      @media screen and (min-width: 512px) {
+        .showroom .content > section.flex-tiles .tiles {
+          counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row; }
+          .showroom .content > section.flex-tiles .tiles > * {
+            counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+          .showroom .content > section.flex-tiles .tiles > * {
+            overflow: hidden;
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 0.5em 1em;
+            background-clip: content-box !important; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+              padding-right: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+              padding-left: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
+              padding-right: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(2n) {
+              padding-right: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+              padding-left: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
+              padding-left: 0.5em;
+              margin-left: auto;
+              margin-right: auto; } }
+      @media screen and (min-width: 768px) {
+        .showroom .content > section.flex-tiles .tiles {
+          counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row; }
+          .showroom .content > section.flex-tiles .tiles > * {
+            counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+          .showroom .content > section.flex-tiles .tiles > * {
+            overflow: hidden;
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+            padding: 0 0.5em 1em;
+            background-clip: content-box !important; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+              padding-right: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+              padding-left: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
+              padding-right: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+              padding-left: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
+              padding-right: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(3n) {
+              padding-right: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+              padding-left: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
+              padding-left: 0.5em;
+              margin-left: auto;
+              margin-right: auto; } }
+      @media screen and (min-width: 1200px) {
+        .showroom .content > section.flex-tiles .tiles {
+          counter-reset: CHASSIS_FLEX_TILE_COUNTER;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row; }
+          .showroom .content > section.flex-tiles .tiles > * {
+            counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+          .showroom .content > section.flex-tiles .tiles > * {
+            overflow: hidden;
+            flex: 0 0 25%;
+            max-width: 25%;
+            padding: 0 0.5em 1em;
+            background-clip: content-box !important; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+              padding-right: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+              padding-left: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
+              padding-right: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+              padding-left: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(2n), .showroom .content > section.flex-tiles .tiles > *:nth-child(2n):last-child {
+              padding-right: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(2n + 1) {
+              padding-left: 0.5em; }
+            .showroom .content > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
+              padding-right: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(4n) {
+              padding-right: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+              padding-left: 0; }
+            .showroom .content > section.flex-tiles .tiles > *:only-child, .showroom .content > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
+              padding-left: 0.5em;
+              margin-left: auto;
+              margin-right: auto; } }
+      .showroom .content > section.flex-tiles .tiles .tile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.82em;
+        margin-bottom: 1em;
+        background: #ededed; }
+        @media screen and (min-width: 512px) {
+          .showroom .content > section.flex-tiles .tiles .tile {
+            height: 6.18em;
+            margin-bottom: 0; } }
+        .showroom .content > section.flex-tiles .tiles .tile:before {
+          content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
+          display: block; }
+    .showroom .content > section.tags .tag.cool {
+      display: inline-block;
+      padding: 0 0.7888em;
+      line-height: 2.55263em;
+      background: #68bb12;
+      border-radius: 0.24063em;
+      border: none;
+      outline: none;
+      vertical-align: middle;
+      font-family: Malva;
+      font-weight: 400;
+      font-style: normal;
+      font-variant: normal;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
+      color: white; }
+      @media screen and (max-width: 511px) {
+        .showroom .content > section.tags .tag.cool {
+          font-size: 12px;
+          line-height: 21px; } }
+      @media screen and (min-width: 512px) and (max-width: 767px) {
+        .showroom .content > section.tags .tag.cool {
+          font-size: 13px;
+          line-height: 24px; } }
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .showroom .content > section.tags .tag.cool {
+          font-size: 13px;
+          line-height: 26px; } }
+      @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        .showroom .content > section.tags .tag.cool {
+          font-size: 14px;
+          line-height: 28px; } }
+      @media screen and (min-width: 1200px) {
+        .showroom .content > section.tags .tag.cool {
+          font-size: 15px;
+          line-height: 31px; } }
+    .showroom .content > section.modals .open.button {
+      margin-bottom: 0; }
+      @media screen and (max-width: 511px) {
+        .showroom .content > section.modals .open.button {
+          display: block;
+          margin-right: 0; } }
+    .showroom .content pre.code {
+      margin: 0 0 1.57761em 0;
+      padding: 0.48751em 1em;
+      background: #fafafa;
+      box-shadow: 0 0 0 1px #d1d2d4;
+      border-radius: 0 0.24063em 0.24063em 0;
+      font-family: Consolas, Courier New, monospace;
+      white-space: pre-wrap;
+      word-wrap: break-word; }
+      .showroom .content pre.code:before {
+        display: block;
+        color: #a9aaae; }
+      .showroom .content pre.code.html:before {
+        content: 'HTML:'; }
+      .showroom .content pre.code.sass:before {
+        content: 'SASS:'; }
+      .showroom .content pre.code.javascript:before {
+        content: 'JavaScript:'; }
   .showroom > footer {
     display: block;
     position: fixed;

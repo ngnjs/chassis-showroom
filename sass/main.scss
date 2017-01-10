@@ -30,10 +30,6 @@ $font-family: Malva;
 // Import Detailer UI Components
 @import 'detailer/ui-components/all';
 
-.bold {
-  font-weight: $bold !important;
-}
-
 .showroom {
   // Account for sticky footer
   padding-bottom: 3.618em;
@@ -83,7 +79,7 @@ $font-family: Malva;
     @include min-viewport-width(medium) {
       @include show;
 
-      flex: 1 0 25%;
+      flex: 0 0 25%;
 
       @include block-layout-rules($has-padding: false);
     }
@@ -121,6 +117,8 @@ $font-family: Malva;
   }
 
   .content {
+    flex: 0 0 75%;
+
     @include min-viewport-width(medium) {
       padding: 0 0 0 3.82vw;
     }
@@ -219,23 +217,9 @@ $font-family: Malva;
       }
 
       &.toolbars {
-        nav.toolbar {
-          background: $grey-n00;
-          
-          .dropdown-menu {
-            &:hover {
-              background: $grey-n01;
-            }
-            
-            nav,
-            menu,
-            .menu {
-              background: $grey-n00;
-            }
-          }
-        }
+
       }
-      
+
       &.modals {
         .open.button {
           margin-bottom: 0;
