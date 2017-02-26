@@ -1,29 +1,10 @@
 @import 'chassis';
 
 // @import 'themes/ocean/import';
+$icon-size-multiplier : 2;
+@import 'https://fonts.googleapis.com/css?family=Hind:300,600';
 
-@font-face {
-  font-family: Malva;
-  src: local("Malva Light"),
-       url('/resources/fonts/Malva-Light.otf');
-  font-weight: $regular;
-}
-
-@font-face {
-  font-family: Malva;
-  src: local("Malva Regular"),
-       url('/resources/fonts/Malva-Regular.otf');
-  font-weight: $semibold;
-}
-
-@font-face {
-  font-family: Malva;
-  src: local("Malva Bold"),
-       url('/resources/fonts/Malva-Bold.otf');
-  font-weight: $bold;
-}
-
-$font-family: Malva;
+$font-family: 'Hind';
 
 @import 'detailer';
 
@@ -51,7 +32,7 @@ $font-family: Malva;
       flex: 1;
       margin: 0;
 
-      @include font-size(large);
+      @include set-typography(large);
       color: $grey-n05;
     }
 
@@ -129,7 +110,7 @@ $font-family: Malva;
         box-shadow: inset 0 -1px 0 0 $grey-n03;
       }
 
-      &.table {
+      &.table table {
         @include stack-below(small);
 
         th {
@@ -230,6 +211,7 @@ $font-family: Malva;
           }
         }
       }
+
     }
 
     pre.code {

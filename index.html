@@ -7,6 +7,10 @@
 
     <title>NGN Chassis Showroom</title>
 
+    <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin/>
+    <link href='https://fonts.googleapis.com' rel='preconnect' crossorigin/>
+    <link href='https://cdn.author.io' rel='preconnect' crossorigin/>
+
     <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
 
     <!-- <script src="lib/ajax.js"></script>
@@ -74,6 +78,7 @@
         <section id="typography" class="hidden typography">
           <section>
             <h1>Chassis-Sass</h1>
+
             <section>
               <p>
                 Chassis is a Sass-based CSS framework for building fluid, responsive websites that are consistent in design throughout. "Who cares?" you ask. Well, Chassis has a few key differences from other CSS frameworks:
@@ -289,6 +294,15 @@ or
                 </th>
               </tr>
             </thead>
+
+            <tfoot>
+              <tr>
+                <td colspan="3">
+                  Footer 1
+                </td>
+              </tr>
+            </tfoot>
+
             <tbody>
               <tr>
                 <td>
@@ -346,13 +360,6 @@ or
                 </td>
               </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="3">
-                  Footer 1
-                </td>
-              </tr>
-            </tfoot>
           </table>
         </section>
 
@@ -412,29 +419,31 @@ or
               <legend>Fieldset Legend</legend>
 
               <div class="text field">
-                <label for="textfield">Text Input</label>
+                <label for="textfield">Basic Input</label>
                 <div class="input-wrapper">
                   <input id="textfield" type="text" name="textfield" value="" required>
-                </div>
-              </div>
-
-              <div class="browser field">
-                <label for="browser_input">Input Field with Browse Button &amp; Placeholder</label>
-                <div class="input-wrapper">
-                  <input id="browser_input" type="text" placeholder="Enter a file name or click Browse&hellip;">
-                  <a class="button">
-                    Browse&hellip;
-                  </a>
                 </div>
               </div>
 
               <div class="textarea field">
                 <label for="textarea">Textarea</label>
                 <div class="input-wrapper">
-                  <textarea id="textarea" name="textarea" rows="3" required></textarea>
+                  <textarea id="textarea" name="textarea" rows="3" placeholder="Placeholder text goes here" required></textarea>
                 </div>
               </div>
+            </fieldset>
 
+            <fieldset class="layout">
+              <legend>Custom Layouts</legend>
+              <div class="browser field">
+                <label for="browser_input">Basic Input with Browse Icon</label>
+                <div class="input-wrapper">
+                  <input id="browser_input" type="text" placeholder="Enter a file name or click Browse&hellip;">
+                  <a class="button">
+                    <svg class="icon" src="https://cdn.author.io/assets/icons/common/magnify.svg"></svg>
+                  </a>
+                </div>
+              </div>
               <div class="row">
                 <div class="optional text field">
                   <label for="numberfield">Number Input</label>
@@ -452,36 +461,46 @@ or
 
               <div class="row">
                 <div class="group">
-                  <div class="checkbox field">
-                    <input id="checkbox_1" type="checkbox" required>
-                    <label for="checkbox_1">Checkbox</label>
-                  </div>
-                  <div class="checkbox field">
-                    <input id="checkbox_2" type="checkbox" required>
-                    <label for="checkbox_2">Checkbox</label>
-                  </div>
-                  <div class="checkbox field">
-                    <input id="checkbox_3" type="checkbox" required>
-                    <label for="checkbox_3">Checkbox</label>
+                  <header>
+                    Checkbox Group
+                  </header>
+                  <div class="fields">
+                    <div class="checkbox field">
+                      <input id="checkbox_1" type="checkbox" required>
+                      <label for="checkbox_1">Checkbox</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input id="checkbox_2" type="checkbox" required>
+                      <label for="checkbox_2">Checkbox</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input id="checkbox_3" type="checkbox" required>
+                      <label for="checkbox_3">Checkbox</label>
+                    </div>
                   </div>
                 </div>
                 <div class="group">
-                  <div class="radio field">
-                    <input id="radio_1" type="radio" name="radios" required>
-                    <label for="radio_1">Radio Button</label>
-                  </div>
-                  <div class="radio field">
-                    <input id="radio_2" type="radio" name="radios" required>
-                    <label for="radio_2">Radio Button</label>
-                  </div>
-                  <div class="radio field">
-                    <input id="radio_3" type="radio" name="radios" required>
-                    <label for="radio_3">Radio Button</label>
+                  <header>
+                    Radio Button Group
+                  </header>
+                  <div class="fields">
+                    <div class="radio field">
+                      <input id="radio_1" type="radio" name="radios" required>
+                      <label for="radio_1">Radio Button</label>
+                    </div>
+                    <div class="radio field">
+                      <input id="radio_2" type="radio" name="radios" required>
+                      <label for="radio_2">Radio Button</label>
+                    </div>
+                    <div class="radio field">
+                      <input id="radio_3" type="radio" name="radios" required>
+                      <label for="radio_3">Radio Button</label>
+                    </div>
                   </div>
                 </div>
               </div>
-
             </fieldset>
+
             <button type="submit">Submit</button>
           </form>
         </section>
@@ -615,7 +634,11 @@ or
             width: Math.pow( (fontSize * ratio), 2 )
           }
         }
-      })();
+
+        NGN.DOM.ready(function () {
+          NGN.DOM.svg.update()
+        })
+      })()
     </script>
   </body>
 </html>

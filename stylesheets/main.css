@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Hind:300,600';
 .chassis .button, .chassis button, .showroom .content > section.buttons .custom-button, .showroom .content > section.buttons .button.outlined, .showroom .content > section.buttons .button.with-shadow, .showroom .content > section.buttons .button.beveled {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -7,7 +8,7 @@
   -o-user-select: none;
   user-select: none; }
 
-.chassis a.disabled, .chassis .disabled.button, .chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button, .showroom .content > section.buttons .button.outlined.disabled, .showroom .content > section.buttons .button.with-shadow.disabled, .showroom .content > section.buttons .button.beveled.disabled {
+.chassis a.disabled, .chassis .disabled.button, .chassis button.disabled, .showroom .content > section.buttons .disabled.custom-button, .chassis svg.icon, .showroom .content > section.buttons .button.outlined.disabled, .showroom .content > section.buttons .button.with-shadow.disabled, .showroom .content > section.buttons .button.beveled.disabled {
   pointer-events: none; }
 
 *, *:before, *:after {
@@ -202,12 +203,7 @@ button {
       .chassis embed {
         margin-bottom: 1.6875em; }
       .chassis p {
-        margin-bottom: 1em; }
-      .chassis input,
-      .chassis textarea {
-        font-size: 16px; }
-      .chassis textarea {
-        line-height: 27px; } }
+        margin-bottom: 1em; } }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .chassis {
       font-size: 17px;
@@ -250,12 +246,7 @@ button {
       .chassis embed {
         margin-bottom: 1.70588em; }
       .chassis p {
-        margin-bottom: 1em; }
-      .chassis input,
-      .chassis textarea {
-        font-size: 17px; }
-      .chassis textarea {
-        line-height: 29px; } }
+        margin-bottom: 1em; } }
   @media screen and (min-width: 1024px) and (max-width: 1199px) {
     .chassis {
       font-size: 18px;
@@ -298,12 +289,7 @@ button {
       .chassis embed {
         margin-bottom: 1.72222em; }
       .chassis p {
-        margin-bottom: 1em; }
-      .chassis input,
-      .chassis textarea {
-        font-size: 18px; }
-      .chassis textarea {
-        line-height: 31px; } }
+        margin-bottom: 1em; } }
   @media screen and (min-width: 1200px) {
     .chassis {
       font-size: 19px;
@@ -346,33 +332,13 @@ button {
       .chassis embed {
         margin-bottom: 1.78947em; }
       .chassis p {
-        margin-bottom: 1em; }
-      .chassis input,
-      .chassis textarea {
-        font-size: 19px; }
-      .chassis textarea {
-        line-height: 34px; } }
-
-@font-face {
-  font-family: Malva;
-  src: local("Malva Light"), url("/resources/fonts/Malva-Light.otf");
-  font-weight: 400; }
-
-@font-face {
-  font-family: Malva;
-  src: local("Malva Regular"), url("/resources/fonts/Malva-Regular.otf");
-  font-weight: 500; }
-
-@font-face {
-  font-family: Malva;
-  src: local("Malva Bold"), url("/resources/fonts/Malva-Bold.otf");
-  font-weight: 700; }
+        margin-bottom: 1em; } }
 
 html {
   background: white; }
 
 .chassis {
-  font-family: Malva;
+  font-family: "Hind";
   font-weight: 400;
   font-style: normal;
   font-variant: normal;
@@ -450,7 +416,7 @@ html {
   cursor: pointer; }
   .chassis .button:visited, .chassis button:visited, .showroom .content > section.buttons .custom-button:visited {
     background: #0098e6;
-    font-family: Malva;
+    font-family: "Hind";
     font-weight: 400;
     font-style: normal;
     font-variant: normal;
@@ -459,7 +425,7 @@ html {
     color: white; }
   .chassis .button:hover, .chassis button:hover, .showroom .content > section.buttons .custom-button:hover {
     background: #00a2f5;
-    font-family: Malva;
+    font-family: "Hind";
     font-weight: 400;
     font-style: normal;
     font-variant: normal;
@@ -468,7 +434,7 @@ html {
     color: white; }
   .chassis .button:active, .chassis button:active, .showroom .content > section.buttons .custom-button:active {
     background: #0091dc;
-    font-family: Malva;
+    font-family: "Hind";
     font-weight: 400;
     font-style: normal;
     font-variant: normal;
@@ -518,17 +484,12 @@ html {
   background: none; }
 
 .chassis ::-webkit-input-placeholder,
-.chassis :-moz-placeholder,
-.chassis ::-moz-placeholder,
-.chassis :-ms-input-placeholder {
+.chassis :-ms-input-placeholder,
+.chassis ::-ms-input-placeholder {
   color: #a9aaae; }
 
 .chassis ::placeholder {
-  color: red !important; }
-
-.chassis label {
-  display: block;
-  cursor: pointer; }
+  color: #a9aaae; }
 
 .chassis input[type="date"], .chassis input[type="datetime-local"], .chassis input[type="email"], .chassis input[type="file"], .chassis input[type="month"], .chassis input[type="number"], .chassis input[type="password"], .chassis input[type="range"], .chassis input[type="search"], .chassis input[type="tel"], .chassis input[type="text"], .chassis input[type="time"], .chassis input[type="url"], .chassis input[type="week"] {
   margin: 0 0.7888em 1.57761em 0;
@@ -539,31 +500,18 @@ html {
   border: 0;
   border-radius: 0;
   outline: 0;
-  font-family: Malva;
+  font-family: "Hind";
   font-weight: 400;
   color: #444444; }
   .chassis input[type="date"]:focus, .chassis input[type="datetime-local"]:focus, .chassis input[type="email"]:focus, .chassis input[type="file"]:focus, .chassis input[type="month"]:focus, .chassis input[type="number"]:focus, .chassis input[type="password"]:focus, .chassis input[type="range"]:focus, .chassis input[type="search"]:focus, .chassis input[type="tel"]:focus, .chassis input[type="text"]:focus, .chassis input[type="time"]:focus, .chassis input[type="url"]:focus, .chassis input[type="week"]:focus {
     outline: 0;
     box-shadow: inset 0 -2px 0 0 #0098e6; }
-    .chassis input[type="date"]:focus ~ .button,
-    .chassis input[type="date"]:focus button, .chassis input[type="datetime-local"]:focus ~ .button,
-    .chassis input[type="datetime-local"]:focus button, .chassis input[type="email"]:focus ~ .button,
-    .chassis input[type="email"]:focus button, .chassis input[type="file"]:focus ~ .button,
-    .chassis input[type="file"]:focus button, .chassis input[type="month"]:focus ~ .button,
-    .chassis input[type="month"]:focus button, .chassis input[type="number"]:focus ~ .button,
-    .chassis input[type="number"]:focus button, .chassis input[type="password"]:focus ~ .button,
-    .chassis input[type="password"]:focus button, .chassis input[type="range"]:focus ~ .button,
-    .chassis input[type="range"]:focus button, .chassis input[type="search"]:focus ~ .button,
-    .chassis input[type="search"]:focus button, .chassis input[type="tel"]:focus ~ .button,
-    .chassis input[type="tel"]:focus button, .chassis input[type="text"]:focus ~ .button,
-    .chassis input[type="text"]:focus button, .chassis input[type="time"]:focus ~ .button,
-    .chassis input[type="time"]:focus button, .chassis input[type="url"]:focus ~ .button,
-    .chassis input[type="url"]:focus button, .chassis input[type="week"]:focus ~ .button,
-    .chassis input[type="week"]:focus button {
-      box-shadow: inset 0 -2px 0 0 #0098e6; }
 
 .chassis input[type="checkbox"] + label, .chassis input[type="radio"] + label {
   display: inline-block; }
+
+.chassis input:placeholder-shown {
+  color: #a9aaae; }
 
 .chassis textarea {
   margin: 0 0.7888em 1.57761em 0;
@@ -577,19 +525,27 @@ html {
   border: 0;
   border-radius: 0;
   outline: 0;
-  font-family: Malva;
+  font-family: "Hind";
   font-weight: 400;
   color: #444444; }
   .chassis textarea:focus {
     outline: 0;
     box-shadow: inset 0 0 0 2px #0098e6; }
+  .chassis textarea:placeholder-shown {
+    color: #a9aaae; }
 
 .chassis button {
-  font-family: Malva;
+  font-family: "Hind";
   font-weight: 400; }
 
 .chassis select[multiple] {
   vertical-align: top; }
+
+.chassis label {
+  display: block; }
+
+.chassis .label-wrapper {
+  display: flex; }
 
 .chassis .input-wrapper {
   display: flex; }
@@ -606,7 +562,8 @@ html {
     width: 0;
     max-width: 100%;
     margin: 0; }
-  .chassis .input-wrapper input:focus ~ .button {
+  .chassis .input-wrapper input:focus ~ .button,
+  .chassis .input-wrapper input:focus ~ button {
     box-shadow: inset 0 -2px 0 0 #0098e6; }
   .chassis .input-wrapper textarea {
     flex: 1 1 auto;
@@ -619,6 +576,7 @@ html {
     display: flex;
     align-items: center;
     margin: 0;
+    padding: 0;
     border-radius: 0;
     background: transparent;
     box-shadow: inset 0 -1px 0 0 #bcbdc1;
@@ -627,9 +585,9 @@ html {
       fill: #949599; }
     .chassis .input-wrapper .button:hover {
       background: transparent;
-      color: #636466; }
+      color: #444444; }
       .chassis .input-wrapper .button:hover svg.icon {
-        fill: #636466; }
+        fill: #444444; }
 
 .chassis form > *:last-child,
 .chassis form fieldset > *:last-child {
@@ -647,6 +605,8 @@ html {
 
 .chassis form .group {
   margin: 0 0 1.57761em 0; }
+  .chassis form .group > header {
+    font-weight: 700; }
   .chassis form .group .field {
     margin-bottom: 0; }
 
@@ -668,7 +628,7 @@ html {
       .chassis form .row .field,
       .chassis form .row .group {
         flex: 1 1 50%;
-        margin: 0 1em; }
+        margin: 0 1.91vw; }
         .chassis form .row .field:first-child,
         .chassis form .row .group:first-child {
           margin-left: 0; }
@@ -676,10 +636,15 @@ html {
         .chassis form .row .group:last-child {
           margin-right: 0; }
       .chassis form .row .group {
-        padding: 0.48751em 1em;
         padding: 0; }
         .chassis form .row .group .field {
           margin: 0; } }
+
+.chassis svg.icon {
+  width: 2em;
+  height: auto;
+  vertical-align: middle;
+  fill: #444444; }
 
 .chassis .modal {
   align-self: center;
@@ -717,7 +682,8 @@ html {
   width: 100%;
   border: 0;
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+  background-color: white; }
   .chassis table th,
   .chassis table td {
     padding: 0.48751em 0.7888em;
@@ -730,7 +696,11 @@ html {
     font-weight: 700;
     text-align: left; }
   .chassis table thead {
-    border-bottom: 3px solid #dadbdd; }
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 3px solid #dadbdd;
+    box-shadow: 0 3px 0 0 #dadbdd; }
   .chassis table tfoot {
     border-top: 3px solid #dadbdd; }
   .chassis table tbody tr td {
@@ -739,14 +709,16 @@ html {
     border-bottom: 0; }
 
 .chassis .tag {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 0 0.7888em;
   line-height: 2.55263em;
   background: #a9aaae;
   border-radius: 0.24063em;
   border: none;
   outline: none;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   text-align: center;
   text-decoration: none;
   text-transform: none;
@@ -871,18 +843,25 @@ html {
     .showroom .content > section h1 {
       box-shadow: inset 0 -1px 0 0 #d1d2d4; }
     @media screen and (max-width: 511px) {
-      .showroom .content > section.table {
-        display: block; }
-        .showroom .content > section.table thead,
-        .showroom .content > section.table tbody,
-        .showroom .content > section.table tfoot,
-        .showroom .content > section.table tr,
-        .showroom .content > section.table td,
-        .showroom .content > section.table th {
+      .showroom .content > section.table table {
+        display: flex;
+        flex-direction: column; }
+        .showroom .content > section.table table thead,
+        .showroom .content > section.table table tbody,
+        .showroom .content > section.table table tfoot,
+        .showroom .content > section.table table tr,
+        .showroom .content > section.table table td,
+        .showroom .content > section.table table th {
           display: block; }
-        .showroom .content > section.table tbody tr:last-child td:not(:last-child) {
+        .showroom .content > section.table table caption {
+          order: -1; }
+        .showroom .content > section.table table thead {
+          position: static; }
+        .showroom .content > section.table table tfoot {
+          order: 99; }
+        .showroom .content > section.table table tbody tr:last-child td:not(:last-child) {
           border-bottom: 1px solid #dadbdd; } }
-    .showroom .content > section.table th {
+    .showroom .content > section.table table th {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; }
@@ -897,7 +876,7 @@ html {
       outline: none;
       box-shadow: inset 0 0 0 2px #bcbdc1;
       vertical-align: middle;
-      font-family: Malva;
+      font-family: "Hind";
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
@@ -909,7 +888,7 @@ html {
       .showroom .content > section.buttons .button.outlined:visited {
         background: white;
         box-shadow: inset 0 0 0 2px #bcbdc1;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -918,7 +897,7 @@ html {
         color: #77787c; }
       .showroom .content > section.buttons .button.outlined:hover {
         background: #e2e3e5;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -927,7 +906,7 @@ html {
         color: #444444; }
       .showroom .content > section.buttons .button.outlined:active {
         background: #dadbdd;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -949,7 +928,7 @@ html {
       outline: none;
       box-shadow: 0 3px 3px 0 #a9aaae;
       vertical-align: middle;
-      font-family: Malva;
+      font-family: "Hind";
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
@@ -961,7 +940,7 @@ html {
       .showroom .content > section.buttons .button.with-shadow:visited {
         background: #0098e6;
         box-shadow: 0 3px 3px 0 #a9aaae;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -970,7 +949,7 @@ html {
         color: white; }
       .showroom .content > section.buttons .button.with-shadow:hover {
         background: #00a2f5;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -979,7 +958,7 @@ html {
         color: white; }
       .showroom .content > section.buttons .button.with-shadow:active {
         background: #0091dc;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1001,7 +980,7 @@ html {
       outline: none;
       box-shadow: inset 0 -2px 0 0 #bcbdc1;
       vertical-align: middle;
-      font-family: Malva;
+      font-family: "Hind";
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
@@ -1014,7 +993,7 @@ html {
       .showroom .content > section.buttons .button.beveled:visited {
         background: linear-gradient(to bottom, #ededed 0%, #d1d2d4 100%);
         box-shadow: inset 0 -2px 0 0 #bcbdc1;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1024,7 +1003,7 @@ html {
       .showroom .content > section.buttons .button.beveled:hover {
         background: linear-gradient(to bottom, #e2e3e5 0%, #bcbdc1 100%);
         box-shadow: inset 0 -2px 0 0 #a9aaae;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1034,7 +1013,7 @@ html {
       .showroom .content > section.buttons .button.beveled:active {
         background: linear-gradient(to bottom, #bcbdc1 0%, #e2e3e5 100%);
         box-shadow: inset 0 2px 0 0 #a9aaae;
-        font-family: Malva;
+        font-family: "Hind";
         font-weight: 400;
         font-style: normal;
         font-variant: normal;
@@ -1170,15 +1149,17 @@ html {
           content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
           display: block; }
     .showroom .content > section.tags .tag.cool {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       padding: 0 0.7888em;
       line-height: 2.55263em;
       background: #68bb12;
       border-radius: 0.24063em;
       border: none;
       outline: none;
-      vertical-align: middle;
-      font-family: Malva;
+      vertical-align: text-bottom;
+      font-family: "Hind";
       font-weight: 400;
       font-style: normal;
       font-variant: normal;
