@@ -718,7 +718,7 @@ html {
   border-radius: 0.24063em;
   border: none;
   outline: none;
-  vertical-align: text-bottom;
+  vertical-align: middle;
   text-align: center;
   text-decoration: none;
   text-transform: none;
@@ -1158,7 +1158,7 @@ html {
       border-radius: 0.24063em;
       border: none;
       outline: none;
-      vertical-align: text-bottom;
+      vertical-align: middle;
       font-family: "Hind";
       font-weight: 400;
       font-style: normal;
