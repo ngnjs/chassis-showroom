@@ -422,6 +422,17 @@ or
     &lt;/footer&gt;
   &lt;/div&gt;
 &lt;/chassis-overlay&gt;</pre>
+          <pre class="javascript code">var openButton = document.querySelector('section.modals .open.button');
+var closeButton = document.querySelector('chassis-overlay .okay.button');
+var overlay = document.querySelector('chassis-overlay');
+
+openButton.addEventListener('click', function() {
+  overlay.open();
+});
+
+closeButton.addEventListener('click', function() {
+  overlay.close();
+});</pre>
           <a class="open button" href="javascript:;">Open Modal Window</a>
         </section>
 
